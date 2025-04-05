@@ -10,8 +10,8 @@ offset_bottom = 191.0
 text = "Track select"
 
 [node name="Proceed" type="Button" parent="."]
-offset_left = 546.0
-offset_top = 330.0
-offset_right = 617.0
-offset_bottom = 361.0
+offset_left = 494.0
+offset_top = 358.0
+offset_right = 565.0
+offset_bottom = 389.0
 text = "Proceed"

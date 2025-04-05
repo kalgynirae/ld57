@@ -25,7 +25,9 @@ func apply_mode():
 	elif mode == 3:
 		get_node("TrackScreen").visible = true
 	elif mode == 4:
-		get_node("RaceScreen").visible = true
+		var race = get_node("RaceScreen")
+		race.init()
+		race.visible = true
 
 func advance_mode():
 	mode += 1

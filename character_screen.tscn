@@ -10,8 +10,8 @@ offset_bottom = 186.0
 text = "Character select"
 
 [node name="Proceed" type="Button" parent="."]
-offset_left = 546.0
-offset_top = 330.0
-offset_right = 617.0
-offset_bottom = 361.0
+offset_left = 495.0
+offset_top = 356.0
+offset_right = 566.0
+offset_bottom = 387.0
 text = "Proceed"

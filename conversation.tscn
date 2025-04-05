@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3aeacmk67yqp"]
-
-[ext_resource type="Theme" uid="uid://bi0qepq3dk675" path="res://themes/ui.tres" id="1_dip1w"]
+[gd_scene format=3 uid="uid://b3aeacmk67yqp"]
 
 [node name="Conversation" type="Node2D"]
 
@@ -10,33 +8,35 @@ offset_top = 384.0
 offset_right = 1216.0
 offset_bottom = 704.0
 
-[node name="BoxContainer" type="BoxContainer" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_dip1w")
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
 vertical = true
 
-[node name="TheirLine" type="RichTextLabel" parent="Panel/BoxContainer"]
+[node name="TheirLine" type="RichTextLabel" parent="Panel/MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 text = "Hello! It's nice to finally meet you."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="YourLines" type="BoxContainer" parent="Panel/BoxContainer"]
+[node name="YourLines" type="BoxContainer" parent="Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 vertical = true
 
-[node name="Button1" type="Button" parent="Panel/BoxContainer/YourLines"]
+[node name="Button1" type="Button" parent="Panel/MarginContainer/BoxContainer/YourLines"]
 layout_mode = 2
 text = "And also with you!"
 
-[node name="Button2" type="Button" parent="Panel/BoxContainer/YourLines"]
+[node name="Button2" type="Button" parent="Panel/MarginContainer/BoxContainer/YourLines"]
 layout_mode = 2
 text = "We haven't technically met yet."

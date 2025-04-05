@@ -10,8 +10,8 @@ offset_bottom = 189.0
 text = "Opponent select"
 
 [node name="Proceed" type="Button" parent="."]
-offset_left = 546.0
-offset_top = 330.0
-offset_right = 617.0
-offset_bottom = 361.0
+offset_left = 493.0
+offset_top = 357.0
+offset_right = 564.0
+offset_bottom = 388.0
 text = "Proceed"
