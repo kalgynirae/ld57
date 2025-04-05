@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://byw24gpswocfn"]
+[gd_scene load_steps=7 format=3 uid="uid://byw24gpswocfn"]
 
 [ext_resource type="PackedScene" uid="uid://dtyeqoigtro7n" path="res://Hud.tscn" id="1_bqln3"]
 [ext_resource type="Texture2D" uid="uid://cvujrc4qqjm51" path="res://images/temp-background.jpeg" id="1_p4w0p"]
 [ext_resource type="PackedScene" uid="uid://b3aeacmk67yqp" path="res://Conversation.tscn" id="2_l0475"]
-[ext_resource type="Texture2D" uid="uid://dvrepqnn4cw07" path="res://images/testworm.png" id="3_w3io2"]
+[ext_resource type="Shader" uid="uid://dslt0lssie1rc" path="res://outline.gdshader" id="4_g74v7"]
+[ext_resource type="Texture2D" uid="uid://dfetq85xdg6jb" path="res://images/wormbodypink.png" id="5_g74v7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67pjq"]
+shader = ExtResource("4_g74v7")
+shader_parameter/debug = false
+shader_parameter/border_scale = 2.0
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/blur_amount = 2.0
+shader_parameter/shadow_scale = 1.5
+shader_parameter/disable_rotating = false
 
 [node name="RaceScreen" type="Node2D"]
 
@@ -17,6 +28,6 @@ texture = ExtResource("1_p4w0p")
 
 [node name="Testworm" type="Sprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_67pjq")
 position = Vector2(593, 247)
-scale = Vector2(8.0625, 8.0625)
-texture = ExtResource("3_w3io2")
+texture = ExtResource("5_g74v7")
