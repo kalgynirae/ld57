@@ -7,6 +7,7 @@ offset_left = 546.0
 offset_top = 166.0
 offset_right = 674.0
 offset_bottom = 189.0
+theme_override_font_sizes/font_size = 42
 text = "Opponent select"
 
 [node name="Proceed" type="Button" parent="."]

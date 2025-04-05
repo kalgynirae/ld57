@@ -3,10 +3,11 @@
 [node name="TrackScreen" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 629.0
-offset_top = 168.0
-offset_right = 755.0
-offset_bottom = 191.0
+offset_left = 517.0
+offset_top = 167.0
+offset_right = 881.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 67
 text = "Track select"
 
 [node name="Proceed" type="Button" parent="."]
