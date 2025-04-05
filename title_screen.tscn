@@ -1,3 +1,28 @@
 [gd_scene format=3 uid="uid://buwgp24tuvtcx"]
 
 [node name="TitleScreen" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.190762, 0.190762, 0.190762, 1)
+polygon = PackedVector2Array(0, 0, 0, 720, 1280, 720, 1280, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 486.0
+offset_top = 175.0
+offset_right = 629.0
+offset_bottom = 211.0
+text = "Title of Game"
+
+[node name="Start" type="Button" parent="."]
+offset_left = 511.0
+offset_top = 359.0
+offset_right = 557.0
+offset_bottom = 390.0
+text = "Start"
+
+[node name="DontStart" type="Button" parent="."]
+offset_left = 487.0
+offset_top = 411.0
+offset_right = 579.0
+offset_bottom = 442.0
+text = "Don't Start"

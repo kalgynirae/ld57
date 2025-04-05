@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bpaq6l8avn3h"]
+
+[node name="CharacterScreen" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 517.0
+offset_top = 163.0
+offset_right = 643.0
+offset_bottom = 186.0
+text = "Character select"
+
+[node name="Proceed" type="Button" parent="."]
+offset_left = 546.0
+offset_top = 330.0
+offset_right = 617.0
+offset_bottom = 361.0
+text = "Proceed"

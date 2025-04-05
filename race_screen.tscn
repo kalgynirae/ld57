@@ -22,12 +22,12 @@ shader_parameter/disable_rotating = false
 position = Vector2(711, 217)
 texture = ExtResource("1_p4w0p")
 
-[node name="Hud" parent="." instance=ExtResource("1_bqln3")]
-
-[node name="Conversation" parent="." instance=ExtResource("2_l0475")]
-
 [node name="Testworm" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_67pjq")
 position = Vector2(593, 247)
 texture = ExtResource("5_g74v7")
+
+[node name="Conversation" parent="." instance=ExtResource("2_l0475")]
+
+[node name="Hud" parent="." instance=ExtResource("1_bqln3")]

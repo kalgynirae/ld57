@@ -1,9 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://u76quktxaryv"]
+[gd_scene load_steps=7 format=3 uid="uid://u76quktxaryv"]
 
 [ext_resource type="Script" uid="uid://bxby5voubx8m8" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://buwgp24tuvtcx" path="res://title_screen.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://byw24gpswocfn" path="res://race_screen.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bpaq6l8avn3h" path="res://character_screen.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://bm7xgnkrly7uq" path="res://opponent_screen.tscn" id="4_ryrav"]
+[ext_resource type="PackedScene" uid="uid://cu1iaadae4xhq" path="res://track_screen.tscn" id="5_eow3j"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
 
+[node name="TitleScreen" parent="." instance=ExtResource("2_fc0e3")]
+
+[node name="CharacterScreen" parent="." instance=ExtResource("3_fc0e3")]
+visible = false
+
+[node name="OpponentScreen" parent="." instance=ExtResource("4_ryrav")]
+visible = false
+
+[node name="TrackScreen" parent="." instance=ExtResource("5_eow3j")]
+visible = false
+
 [node name="RaceScreen" parent="." instance=ExtResource("2_feb5d")]
+visible = false

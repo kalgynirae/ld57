@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cu1iaadae4xhq"]
+
+[node name="TrackScreen" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 629.0
+offset_top = 168.0
+offset_right = 755.0
+offset_bottom = 191.0
+text = "Track select"
+
+[node name="Proceed" type="Button" parent="."]
+offset_left = 546.0
+offset_top = 330.0
+offset_right = 617.0
+offset_bottom = 361.0
+text = "Proceed"

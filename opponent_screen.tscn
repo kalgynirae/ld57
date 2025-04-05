@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bm7xgnkrly7uq"]
+
+[node name="OpponentScreen" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 546.0
+offset_top = 166.0
+offset_right = 674.0
+offset_bottom = 189.0
+text = "Opponent select"
+
+[node name="Proceed" type="Button" parent="."]
+offset_left = 546.0
+offset_top = 330.0
+offset_right = 617.0
+offset_bottom = 361.0
+text = "Proceed"
