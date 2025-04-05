@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3aeacmk67yqp"]
+
+[ext_resource type="Theme" uid="uid://bi0qepq3dk675" path="res://ui-theme.tres" id="1_dip1w"]
+
+[node name="Conversation" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 384.0
+offset_right = 1088.0
+offset_bottom = 632.0
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel"]
+offset_right = 1024.0
+offset_bottom = 248.0
+theme = ExtResource("1_dip1w")
+vertical = true
+
+[node name="TheirLine" type="RichTextLabel" parent="Panel/BoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Hello! It's nice to finally meet you."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YourLines" type="BoxContainer" parent="Panel/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+vertical = true
+
+[node name="Button1" type="Button" parent="Panel/BoxContainer/YourLines"]
+layout_mode = 2
+text = "And also with you!"
+
+[node name="Button2" type="Button" parent="Panel/BoxContainer/YourLines"]
+layout_mode = 2
+text = "We haven't technically met yet."

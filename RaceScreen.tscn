@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://byw24gpswocfn"]
+[gd_scene load_steps=3 format=3 uid="uid://byw24gpswocfn"]
 
 [ext_resource type="PackedScene" uid="uid://dtyeqoigtro7n" path="res://Hud.tscn" id="1_bqln3"]
+[ext_resource type="PackedScene" uid="uid://b3aeacmk67yqp" path="res://Conversation.tscn" id="2_l0475"]
 
 [node name="RaceScreen" type="Node2D"]
 
 [node name="Hud" parent="." instance=ExtResource("1_bqln3")]
+
+[node name="Conversation" parent="." instance=ExtResource("2_l0475")]

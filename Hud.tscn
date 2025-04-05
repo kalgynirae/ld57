@@ -1,23 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtyeqoigtro7n"]
+[gd_scene load_steps=2 format=3 uid="uid://dtyeqoigtro7n"]
 
-[ext_resource type="FontFile" uid="uid://cb3gjoeuykkdp" path="res://Kalam-Bold.ttf" id="1_d4yu0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n10im"]
-
-[sub_resource type="Theme" id="Theme_u6ohr"]
-Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("1_d4yu0")
-Label/styles/normal = SubResource("StyleBoxEmpty_n10im")
-RichTextLabel/font_sizes/normal_font_size = 26
-RichTextLabel/fonts/normal_font = ExtResource("1_d4yu0")
+[ext_resource type="Theme" uid="uid://bi0qepq3dk675" path="res://ui-theme.tres" id="1_d4yu0"]
 
 [node name="Hud" type="Node2D"]
 
@@ -30,7 +13,7 @@ polygon = PackedVector2Array(0, 0, 0, 42.6667, 135.529, 42.6667, 135.529, 0)
 [node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
 offset_right = 136.0
 offset_bottom = 43.0
-theme = SubResource("Theme_u6ohr")
+theme = ExtResource("1_d4yu0")
 text = "Lap 1/3"
 scroll_active = false
 autowrap_mode = 0
