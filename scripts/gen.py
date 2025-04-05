@@ -1,18 +1,29 @@
 #!/usr/bin/env python3
+import json
 from contextlib import contextmanager
-from dataclasses import dataclass
 from itertools import count
+from pathlib import Path
 
 conversations = {}
 current_conversation = None
 current_conversation_name = None
 current_label = None
-current_section = None
+current_markers = None
 choice_id_gen = None
 
 
-def dump_conversations():
+def dump_scripts():
+    cwd = Path.cwd()
+    if cwd.name == "scripts":
+        scripts_dir = cwd
+    elif (cwd / "scripts").is_directory():
+        scripts_dir = cwd / "scripts"
+
     for name, conversation in conversations.items():
+        with open(scripts_dir / f"script-{name}.json", "w") as f:
+            json.dump(conversation, f)
+            f.write("\n")
+
 
 @contextmanager
 def conversation(name):
@@ -20,51 +31,65 @@ def conversation(name):
         raise RuntimeError(f"Duplicate conversation name {name!r}")
 
     global current_conversation
-    current_conversation = {}
+    current_conversation = []
 
     global current_conversation_name
     current_conversation_name = name
 
+    global current_markers
+    current_markers = set()
+
     global choice_id_gen
-    choide_id_gen = count(start=1)
+    choice_id_gen = count(start=1)
 
     conversations[name] = current_conversation
-    section("start")
-    try:
-        yield
-    finally:
-        current_conversation = None
-        current_conversation_name = None
+    marker("start")
+
+    yield
+
+    current_conversation = None
+    current_conversation_name = None
 
 
-def section(label: int | str):
+def marker(label: int | str):
     label = str(label)
-    if label in current_conversation:
+    if label in current_markers:
         raise RuntimeError(
-            f"Duplicate section label {label!r} in conversation {current_conversation_name!r}"
+            f"Duplicate marker label {label!r} in conversation {current_conversation_name!r}"
         )
 
-    global current_label
-    current_label = label
-
-    global current_section
-    current_section = []
-
-    current_conversation[label] = current_section
+    current_markers.add(label)
+    current_conversation.append({"marker": label})
 
 
 def them(*lines):
-    current_section.append({"them": [*lines]})
+    current_conversation.append({"them": [*lines]})
 
 
-def you(choices: dict[str, int] | list[str]):
-    if isinstance(choices, dict):
+def you(choices_or_line: dict[str, int] | str):
+    if isinstance(choices_or_line, dict):
         prepared_choices = [
-            (next(choice_id_gen), line, str(next_section_label)),
-            for line, next_section_label in choices.items()
+            {
+                "id": next(choice_id_gen),
+                "line": line,
+                "next": str(next_marker_label),
+            }
+            for line, next_marker_label in choices_or_line.items()
         ]
-    current_section.append({"you": [(next(choice_id_gen), line, next_section)]})
+    else:
+        prepared_choices = [
+            {
+                "id": next(choice_id_gen),
+                "line": choices_or_line,
+                "next": None,
+            }
+        ]
+    current_conversation.append({"you": prepared_choices})
 
+
+###
+### CONVERSATIONS
+###
 
 with conversation("test"):
     them("Hello! It's nice to finally meet you!")
@@ -75,19 +100,21 @@ with conversation("test"):
         }
     )
 
-    section(1)
+    marker(1)
     them("*bows profusely*")
     you({"Yep": 3})
 
-    section(2)
+    marker(2)
     them(
         "...",
         ".....",
         "................",
     )
-    you({"Yep": 3})
+    you("Yep")
 
-    section(3)
+    marker(3)
     them("So... how do you feel about the economy?")
+    you("Yes")
 
-dump_conversations()
+
+dump_scripts()
