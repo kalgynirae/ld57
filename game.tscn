@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://buwgp24tuvtcx" path="res://title_screen.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://byw24gpswocfn" path="res://race_screen.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://bpaq6l8avn3h" path="res://character_screen.tscn" id="3_fc0e3"]
-[ext_resource type="Script" path="res://character_screen.gd" id="4_eow3j"]
+[ext_resource type="Script" uid="uid://27084erkmx1h" path="res://character_screen.gd" id="4_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bm7xgnkrly7uq" path="res://opponent_screen.tscn" id="4_ryrav"]
 [ext_resource type="PackedScene" uid="uid://cu1iaadae4xhq" path="res://track_screen.tscn" id="5_eow3j"]
 

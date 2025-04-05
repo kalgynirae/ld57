@@ -15,18 +15,25 @@ theme_override_font_sizes/font_size = 96
 text = "Speed Dating"
 
 [node name="Start" type="Button" parent="."]
-offset_left = 511.0
-offset_top = 359.0
-offset_right = 557.0
-offset_bottom = 390.0
-text = "Start"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 528.0
+offset_top = 630.0
+offset_right = 574.0
+offset_bottom = 661.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "     Start     "
 
 [node name="DontStart" type="Button" parent="."]
-offset_left = 487.0
-offset_top = 411.0
-offset_right = 579.0
-offset_bottom = 442.0
-text = "Don't Start"
+offset_left = 652.0
+offset_top = 630.0
+offset_right = 744.0
+offset_bottom = 661.0
+text = "     Don't Start     "
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 525.0
