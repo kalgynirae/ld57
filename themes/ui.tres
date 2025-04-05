@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://bi0qepq3dk675"]
 
-[ext_resource type="FontFile" uid="uid://cb3gjoeuykkdp" path="res://Kalam-Bold.ttf" id="1_3fso6"]
+[ext_resource type="FontFile" uid="uid://cb3gjoeuykkdp" path="res://fonts/Kalam-Bold.ttf" id="1_3fso6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n10im"]
 

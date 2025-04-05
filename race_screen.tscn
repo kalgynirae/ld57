@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://byw24gpswocfn"]
 
-[ext_resource type="PackedScene" uid="uid://dtyeqoigtro7n" path="res://Hud.tscn" id="1_bqln3"]
+[ext_resource type="PackedScene" uid="uid://dtyeqoigtro7n" path="res://hud.tscn" id="1_bqln3"]
 [ext_resource type="Texture2D" uid="uid://cvujrc4qqjm51" path="res://images/temp-background.jpeg" id="1_p4w0p"]
-[ext_resource type="PackedScene" uid="uid://b3aeacmk67yqp" path="res://Conversation.tscn" id="2_l0475"]
-[ext_resource type="Shader" uid="uid://dslt0lssie1rc" path="res://outline.gdshader" id="4_g74v7"]
+[ext_resource type="PackedScene" uid="uid://b3aeacmk67yqp" path="res://conversation.tscn" id="2_l0475"]
+[ext_resource type="Shader" uid="uid://dslt0lssie1rc" path="res://shaders/outline.gdshader" id="4_g74v7"]
 [ext_resource type="Texture2D" uid="uid://dfetq85xdg6jb" path="res://images/wormbodypink.png" id="5_g74v7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_67pjq"]

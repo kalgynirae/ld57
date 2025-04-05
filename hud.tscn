@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtyeqoigtro7n"]
 
-[ext_resource type="Theme" uid="uid://bi0qepq3dk675" path="res://ui-theme.tres" id="1_d4yu0"]
+[ext_resource type="Theme" uid="uid://bi0qepq3dk675" path="res://themes/ui.tres" id="1_d4yu0"]
 
 [node name="Hud" type="Node2D"]
 

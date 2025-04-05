@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cb3gjoeuykkdp"
-path="res://.godot/imported/Kalam-Bold.ttf-9217a05578c1ab280e86d83198e94106.fontdata"
+path="res://.godot/imported/Kalam-Bold.ttf-c6ecfeeb0e82d1dc376abd7c2b7ecb51.fontdata"
 
 [deps]
 
-source_file="res://Kalam-Bold.ttf"
-dest_files=["res://.godot/imported/Kalam-Bold.ttf-9217a05578c1ab280e86d83198e94106.fontdata"]
+source_file="res://fonts/Kalam-Bold.ttf"
+dest_files=["res://.godot/imported/Kalam-Bold.ttf-c6ecfeeb0e82d1dc376abd7c2b7ecb51.fontdata"]
 
 [params]
 

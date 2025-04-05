@@ -13,7 +13,6 @@ config_version=5
 config/name="LD57 Racing Game"
 run/main_scene="uid://u76quktxaryv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [input]
 
