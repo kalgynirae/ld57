@@ -16,13 +16,12 @@ def dump_scripts():
     cwd = Path.cwd()
     if cwd.name == "scripts":
         scripts_dir = cwd
-    elif (cwd / "scripts").is_directory():
+    elif (cwd / "scripts").is_dir():
         scripts_dir = cwd / "scripts"
 
     for name, conversation in conversations.items():
-        with open(scripts_dir / f"script-{name}.json", "w") as f:
-            json.dump(conversation, f)
-            f.write("\n")
+        data = json.dumps(conversation) + "\n"
+        (scripts_dir / f"script-{name}.json").write_text(data)
 
 
 @contextmanager
@@ -62,15 +61,15 @@ def marker(label: int | str):
     current_conversation.append({"marker": label})
 
 
-def them(*lines):
-    current_conversation.append({"them": [*lines]})
+def them(line, next=None):
+    current_conversation.append({"them": {"line": line, "next": next}})
 
 
 def you(choices_or_line: dict[str, int] | str):
     if isinstance(choices_or_line, dict):
         prepared_choices = [
             {
-                "id": next(choice_id_gen),
+                "id": str(next(choice_id_gen)),
                 "line": line,
                 "next": str(next_marker_label),
             }
@@ -79,7 +78,7 @@ def you(choices_or_line: dict[str, int] | str):
     else:
         prepared_choices = [
             {
-                "id": next(choice_id_gen),
+                "id": str(next(choice_id_gen)),
                 "line": choices_or_line,
                 "next": None,
             }
@@ -87,9 +86,9 @@ def you(choices_or_line: dict[str, int] | str):
     current_conversation.append({"you": prepared_choices})
 
 
-###
-### CONVERSATIONS
-###
+############################################################
+### CONVERSATIONS                                        ###
+############################################################
 
 with conversation("test"):
     them("Hello! It's nice to finally meet you!")
@@ -105,11 +104,9 @@ with conversation("test"):
     you({"Yep": 3})
 
     marker(2)
-    them(
-        "...",
-        ".....",
-        "................",
-    )
+    them("...")
+    them(".....")
+    them("................")
     you("Yep")
 
     marker(3)
