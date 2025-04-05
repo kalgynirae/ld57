@@ -62,7 +62,7 @@ def marker(label: int | str):
 
 
 def them(line, next=None):
-    current_conversation.append({"them": {"line": line, "next": next}})
+    current_conversation.append({"them": {"line": line, "next": None if next is None else str(next)}})
 
 
 def you(choices_or_line: dict[str, int] | str):
@@ -111,7 +111,18 @@ with conversation("test"):
 
     marker(3)
     them("So... how do you feel about the economy?")
-    you("Yes")
+    you(
+        {
+            "Yes": 4,
+            "No": 5,
+        }
+    )
+
+    marker(4)
+    them("Uhhhhh... maybe try the other option?", 3)
+
+    marker(5)
+    them("Bye!")
 
 
 dump_scripts()
