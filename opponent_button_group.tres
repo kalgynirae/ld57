@@ -1,0 +1,6 @@
+[gd_resource type="ButtonGroup" load_steps=2 format=3 uid="uid://co05pklw1wweb"]
+
+[sub_resource type="GDScript" id="GDScript_dyxf4"]
+
+[resource]
+script = SubResource("GDScript_dyxf4")
