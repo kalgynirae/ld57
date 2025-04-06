@@ -1,6 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://qm6ist4jedfh"]
+[gd_scene load_steps=17 format=3 uid="uid://qm6ist4jedfh"]
 
+[ext_resource type="Shader" uid="uid://2pvjdpj8pm8d" path="res://shaders/dropshadow.gdshader" id="1_g8q23"]
 [ext_resource type="Texture2D" uid="uid://4rl3u5jtgnxd" path="res://images/MillieSprite.png" id="1_lncgp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8q23"]
+shader = ExtResource("1_g8q23")
+shader_parameter/debug = false
+shader_parameter/border_scale = 1.0
+shader_parameter/shadow_offset = Vector2(0, -0.5)
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/blur_amount = 1.0
+shader_parameter/shadow_scale = 1.0
+shader_parameter/disable_rotating = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lncgp"]
 atlas = ExtResource("1_lncgp")
@@ -123,6 +134,7 @@ animations = [{
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_g8q23")
 scale = Vector2(9, 9)
 sprite_frames = SubResource("SpriteFrames_g8q23")
 autoplay = "default"
