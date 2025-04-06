@@ -19,7 +19,7 @@ script = ExtResource("1_e2o6t")
 
 [node name="TitleScreen" parent="." instance=ExtResource("2_fc0e3")]
 
-[node name="Characterselectbackground2" type="Sprite2D" parent="."]
+[node name="transition1" type="Sprite2D" parent="."]
 texture = ExtResource("3_j5wjh")
 centered = false
 offset = Vector2(0, 720)
@@ -28,7 +28,7 @@ offset = Vector2(0, 720)
 position = Vector2(0, 1440)
 script = ExtResource("4_eow3j")
 
-[node name="Characterselectbackground3" type="Sprite2D" parent="."]
+[node name="transition2" type="Sprite2D" parent="."]
 texture = ExtResource("3_j5wjh")
 centered = false
 offset = Vector2(0, 2160)
@@ -37,7 +37,7 @@ offset = Vector2(0, 2160)
 position = Vector2(0, 2880)
 button_group = SubResource("ButtonGroup_eow3j")
 
-[node name="Characterselectbackground4" type="Sprite2D" parent="."]
+[node name="transition3" type="Sprite2D" parent="."]
 texture = ExtResource("3_j5wjh")
 centered = false
 offset = Vector2(0, 3600)
@@ -45,7 +45,7 @@ offset = Vector2(0, 3600)
 [node name="TrackScreen" parent="." instance=ExtResource("5_eow3j")]
 position = Vector2(0, 4320)
 
-[node name="Characterselectbackground5" type="Sprite2D" parent="."]
+[node name="transition4" type="Sprite2D" parent="."]
 texture = ExtResource("3_j5wjh")
 centered = false
 offset = Vector2(0, 5040)
