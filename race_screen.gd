@@ -34,7 +34,7 @@ func update_lap() -> void:
 	get_node("Hud/Box/Lap").text = "Lap %s/%s" % [lap, total_laps]
 
 func TheirLine() -> Node:
-	return get_node("Conversation/Panel/MarginContainer/BoxContainer/TheirLine")
+	return get_node("Conversation/Panel/MarginContainer/BoxContainer/HBoxContainer/TheirLine")
 
 func YourLines() -> Node:
 	return get_node("Conversation/Panel/MarginContainer/BoxContainer/YourLines")

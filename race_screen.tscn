@@ -16,9 +16,9 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 720)
 
-[node name="Opponent" parent="." instance=ExtResource("3_8wwll")]
-position = Vector2(638, 223)
-
 [node name="Conversation" parent="." instance=ExtResource("2_l0475")]
+
+[node name="Opponent" parent="." instance=ExtResource("3_8wwll")]
+position = Vector2(1052, 385)
 
 [node name="Hud" parent="." instance=ExtResource("1_bqln3")]

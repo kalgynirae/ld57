@@ -11,7 +11,7 @@ corner_radius_bottom_left = 20
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 64.0
-offset_top = 384.0
+offset_top = 448.0
 offset_right = 1216.0
 offset_bottom = 704.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_p8fck")
@@ -28,13 +28,22 @@ grow_vertical = 2
 layout_mode = 2
 vertical = true
 
-[node name="TheirLine" type="RichTextLabel" parent="Panel/MarginContainer/BoxContainer"]
-custom_minimum_size = Vector2(0, 120)
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
+
+[node name="TheirLine" type="RichTextLabel" parent="Panel/MarginContainer/BoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_separation = -8
 theme_override_font_sizes/normal_font_size = 30
-text = "Hello! It's nice to finally meet you."
+text = "Hello! It's nice to finally meet you. What happens if this text is long enough to wrap onto a second line?"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/BoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
 
 [node name="YourLines" type="BoxContainer" parent="Panel/MarginContainer/BoxContainer"]
 layout_mode = 2
