@@ -55,12 +55,12 @@ func reset_conversation() -> void:
 	advance_conversation(null)
 
 func advance_conversation(marker) -> void:
-	if marker:
+	if marker and marker != "FINISH":
 		if not jump_to_marker(marker):
 			push_error("Failed to jump to marker %s" % marker)
 	else:
 		current_item += 1
-		if current_item >= len(conversation):
+		if current_item >= len(conversation) or marker == "FINISH":
 			if lap < total_laps:
 				lap += 1
 				update_lap()
@@ -83,11 +83,12 @@ func advance_conversation(marker) -> void:
 				add_button("(proceed)", item["them"]["next"], null)
 			elif next_item.has("you"):
 				advance_conversation(null)
-		else:
-			if lap < total_laps:
-				add_button("(finishline)", null, null)
+			elif next_item.has("end"):
+				add_button("(finishline)", "FINISH", null)
 			else:
-				add_button("(finishline)", null, null)
+				push_error("next_item had neither 'them', 'you', or 'end': %s" % item)
+		else:
+			add_button("(finishline)", "FINISH", null)
 	elif item.has("you"):
 		for choice in item["you"]:
 			add_button(choice["line"], choice["next"], choice["id"])

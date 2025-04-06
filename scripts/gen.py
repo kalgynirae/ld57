@@ -94,6 +94,10 @@ def you(choices_or_line: dict[str, int] | str):
     current_conversation.append({"you": prepared_choices})
 
 
+def end():
+    current_conversation.append({"end": None})
+
+
 ############################################################
 ### CONVERSATIONS                                        ###
 ############################################################
@@ -237,9 +241,9 @@ with conversation("millie"):
     you("Wake up!")
     them("Ahhh!", next="end", emote="neutral")
 
-    marker("legs")  # love
-    them("I HAVE SO MANY OF THOSE!!!")
-    # TODO: end it here? and add "I'm looking forward..."
+    marker("legs")
+    them("I HAVE SO MANY OF THOSE!!!", emote="love")
+    end()
 
     marker("end")
     them("It's been great meeting you!")
