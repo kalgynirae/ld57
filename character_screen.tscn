@@ -16,7 +16,7 @@ offset_left = 423.0
 offset_top = 148.0
 offset_right = 793.0
 offset_bottom = 229.0
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 56
 text = "Character select"
 
 [node name="Proceed" type="Button" parent="."]

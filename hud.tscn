@@ -1,16 +1,22 @@
-[gd_scene format=3 uid="uid://dtyeqoigtro7n"]
+[gd_scene load_steps=2 format=3 uid="uid://dtyeqoigtro7n"]
+
+[ext_resource type="FontFile" uid="uid://q0m1no78yfu5" path="res://fonts/Roboto-SemiBold.ttf" id="1_37p78"]
 
 [node name="Hud" type="Node2D"]
 
 [node name="Box" type="Polygon2D" parent="."]
-position = Vector2(16, 16)
+position = Vector2(64, 64)
 scale = Vector2(0.708333, 0.75)
-color = Color(0, 0, 0, 0.776471)
-polygon = PackedVector2Array(0, 0, 0, 42.6667, 135.529, 42.6667, 135.529, 0)
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(0, 0, 0, 74.6667, 259.765, 74.6667, 259.765, 0)
 
 [node name="Lap" type="RichTextLabel" parent="Box"]
-offset_right = 136.0
-offset_bottom = 43.0
+offset_right = 260.0
+offset_bottom = 75.0
+theme_override_fonts/normal_font = ExtResource("1_37p78")
+theme_override_font_sizes/normal_font_size = 48
 text = "Lap ?/3"
 scroll_active = false
 autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

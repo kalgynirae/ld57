@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bm7xgnkrly7uq"]
 
-[ext_resource type="Script" uid="uid://cahuaycds7iro" path="res://opponent_screen.gd" id="1_c7os8"]
+[ext_resource type="Script" path="res://opponent_screen.gd" id="1_c7os8"]
 [ext_resource type="Texture2D" uid="uid://lpi3gpip8g2a" path="res://images/MillieButtonNormal.png" id="1_e2bi0"]
 [ext_resource type="ButtonGroup" uid="uid://co05pklw1wweb" path="res://opponent_button_group.tres" id="1_g64s2"]
 [ext_resource type="Texture2D" uid="uid://dl3lj0752ddiq" path="res://images/MillieButtonPressed1.png" id="2_jjs8b"]
@@ -32,11 +32,11 @@ texture = ExtResource("3_g63kt")
 centered = false
 
 [node name="Label" type="Label" parent="."]
-offset_left = 546.0
-offset_top = 166.0
-offset_right = 674.0
-offset_bottom = 189.0
-theme_override_font_sizes/font_size = 42
+offset_left = 429.0
+offset_top = 138.0
+offset_right = 834.0
+offset_bottom = 228.0
+theme_override_font_sizes/font_size = 56
 text = "Opponent select"
 
 [node name="Proceed" type="Button" parent="."]

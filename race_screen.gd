@@ -116,6 +116,7 @@ func clear_buttons():
 
 func add_button(text, next, choice_id):
 	var button = Button.new()
+	button.clip_text = true
 	if text == "(finishline)":
 		button.icon = finishline
 		button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER

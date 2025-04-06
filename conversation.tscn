@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://b3aeacmk67yqp"]
+[gd_scene load_steps=2 format=3 uid="uid://b3aeacmk67yqp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8fck"]
+bg_color = Color(0.180722, 0.180722, 0.180722, 0.752941)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Conversation" type="Node2D"]
 
@@ -7,6 +14,7 @@ offset_left = 64.0
 offset_top = 384.0
 offset_right = 1216.0
 offset_bottom = 704.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p8fck")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 1
@@ -23,6 +31,7 @@ vertical = true
 [node name="TheirLine" type="RichTextLabel" parent="Panel/MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
 text = "Hello! It's nice to finally meet you."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -36,7 +45,9 @@ vertical = true
 [node name="Button1" type="Button" parent="Panel/MarginContainer/BoxContainer/YourLines"]
 layout_mode = 2
 text = "And also with you!"
+clip_text = true
 
 [node name="Button2" type="Button" parent="Panel/MarginContainer/BoxContainer/YourLines"]
 layout_mode = 2
 text = "We haven't technically met yet."
+clip_text = true

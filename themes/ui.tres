@@ -1,10 +1,13 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bi0qepq3dk675"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bi0qepq3dk675"]
 
 [ext_resource type="FontFile" uid="uid://cb3gjoeuykkdp" path="res://fonts/Kalam-Bold.ttf" id="1_3fso6"]
+[ext_resource type="FontFile" uid="uid://q0m1no78yfu5" path="res://fonts/Roboto-SemiBold.ttf" id="1_h6ia1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n10im"]
 
 [resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_h6ia1")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -13,7 +16,7 @@ Label/constants/outline_size = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 16
+Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_3fso6")
 Label/styles/normal = SubResource("StyleBoxEmpty_n10im")
 MarginContainer/constants/margin_bottom = 8

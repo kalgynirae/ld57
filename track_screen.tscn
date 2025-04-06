@@ -9,11 +9,11 @@ texture = ExtResource("1_yksju")
 centered = false
 
 [node name="Label" type="Label" parent="."]
-offset_left = 517.0
-offset_top = 167.0
-offset_right = 881.0
-offset_bottom = 275.0
-theme_override_font_sizes/font_size = 67
+offset_left = 458.0
+offset_top = 142.0
+offset_right = 822.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 56
 text = "Track select"
 
 [node name="Proceed" type="Button" parent="."]
