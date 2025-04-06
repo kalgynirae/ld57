@@ -10,7 +10,7 @@ var total_laps: int = 3
 var completed = false
 
 func init() -> void:
-	load_conversation("test")
+	load_conversation("millie")
 	lap = 1
 	update_lap()
 
