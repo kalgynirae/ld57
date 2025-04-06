@@ -76,11 +76,26 @@ func advance_conversation(marker) -> void:
 	clear_buttons()
 	if item.has("them"):
 		TheirLine().text = item["them"]["line"]
+		if item["them"]["emote"]:
+			var opp = $Opponent/Sprite
+			match item["them"]["emote"]:
+				"neutral":
+					opp.animation = "default"
+				"anger":
+					opp.animation = "anger"
+				"love":
+					opp.animation = "love"
+				"sleep":
+					opp.animation = "sleep"
+				"surprise":
+					opp.animation = "surprise"
+				"uwu":
+					opp.animation = "uwu"
 		if item["them"]["next"]:
-			add_button("(proceed)", item["them"]["next"], null)
+			add_button("...", item["them"]["next"], null)
 		elif next_item:
 			if next_item.has("them"):
-				add_button("(proceed)", item["them"]["next"], null)
+				add_button("...", item["them"]["next"], null)
 			elif next_item.has("you"):
 				advance_conversation(null)
 			elif next_item.has("end"):

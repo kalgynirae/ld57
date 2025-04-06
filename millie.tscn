@@ -1,0 +1,128 @@
+[gd_scene load_steps=15 format=3 uid="uid://qm6ist4jedfh"]
+
+[ext_resource type="Texture2D" uid="uid://4rl3u5jtgnxd" path="res://images/MillieSprite.png" id="1_lncgp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lncgp"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8q23"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_837h8"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feo6d"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2t8o"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utu0g"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7o5g"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i3cc"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lklx"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v51gr"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jof6x"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xkwl"]
+atlas = ExtResource("1_lncgp")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8q23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lncgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8q23")
+}],
+"loop": true,
+"name": &"anger",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_837h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feo6d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2t8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utu0g")
+}],
+"loop": true,
+"name": &"love",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7o5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i3cc")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lklx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v51gr")
+}],
+"loop": true,
+"name": &"surprise",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jof6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xkwl")
+}],
+"loop": true,
+"name": &"uwu",
+"speed": 2.0
+}]
+
+[node name="Millie" type="Node2D"]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_g8q23")
+autoplay = "default"

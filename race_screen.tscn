@@ -1,32 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://byw24gpswocfn"]
+[gd_scene load_steps=6 format=3 uid="uid://byw24gpswocfn"]
 
 [ext_resource type="Script" uid="uid://ctmb7jyht6tyx" path="res://race_screen.gd" id="1_837h8"]
 [ext_resource type="PackedScene" uid="uid://dtyeqoigtro7n" path="res://hud.tscn" id="1_bqln3"]
 [ext_resource type="Texture2D" uid="uid://cvv7p1ytlao8a" path="res://images/datebackgroundschoolhouset.png" id="2_837h8"]
 [ext_resource type="PackedScene" uid="uid://b3aeacmk67yqp" path="res://conversation.tscn" id="2_l0475"]
-[ext_resource type="Texture2D" uid="uid://4rl3u5jtgnxd" path="res://images/MillieSprite.png" id="3_8wwll"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_837h8"]
-atlas = ExtResource("3_8wwll")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_feo6d"]
-atlas = ExtResource("3_8wwll")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7lxan"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_837h8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_feo6d")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
+[ext_resource type="PackedScene" uid="uid://qm6ist4jedfh" path="res://millie.tscn" id="3_8wwll"]
 
 [node name="RaceScreen" type="Node2D"]
 script = ExtResource("1_837h8")
@@ -38,12 +16,8 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 720)
 
-[node name="Opponent" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(643, 227)
-scale = Vector2(9, 9)
-sprite_frames = SubResource("SpriteFrames_7lxan")
-autoplay = "default"
+[node name="Opponent" parent="." instance=ExtResource("3_8wwll")]
+position = Vector2(638, 223)
 
 [node name="Conversation" parent="." instance=ExtResource("2_l0475")]
 

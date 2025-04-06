@@ -149,7 +149,7 @@ with conversation("millie"):
     marker(1)
     them(
         "Really? I think I'd remember seeing your [ACCESSORY] before.",
-        emote="surprised",
+        emote="surprise",
     )
     you(
         {
@@ -159,7 +159,7 @@ with conversation("millie"):
     )
 
     marker(2)
-    them(".....", emote="angry")
+    them(".....", emote="anger")
     them("My memory is just fine, thank you very much.")
     you(
         {
@@ -180,7 +180,7 @@ with conversation("millie"):
         }
     )
     marker("like math")
-    them("Oh.", emote="surprised")
+    them("Oh.", emote="surprise")
 
     marker("don't like math")
     them("I don't like math.", emote="neutral")
@@ -193,7 +193,7 @@ with conversation("millie"):
         }
     )
     marker("like books")
-    them("Oh.", emote="surprised")
+    them("Oh.", emote="surprise")
 
     marker("don't like books")
     them("I don't like books.", emote="neutral")
@@ -206,7 +206,7 @@ with conversation("millie"):
         }
     )
     marker("like sports")
-    them("Oh.", emote="surprised")
+    them("Oh.", emote="surprise")
 
     marker("don't like sports")
     them("I don't like sports.", emote="neutral")
@@ -239,13 +239,13 @@ with conversation("millie"):
     them("Zzzzzzzzzz...", emote="sleep")
     them("*Millie fell asleep!*")
     you("Wake up!")
-    them("Ahhh!", next="end", emote="neutral")
+    them("Ahhh!", next="end", emote="surprised")
 
     marker("legs")
     them("I HAVE SO MANY OF THOSE!!!", emote="love")
     end()
 
     marker("end")
-    them("It's been great meeting you!")
+    them("It's been great meeting you!", emote="neutral")
 
 dump_scripts()
