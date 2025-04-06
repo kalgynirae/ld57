@@ -1,5 +1,7 @@
 extends Node2D
 
+const finishline = preload("res://images/finishline.png")
+
 var conversation = null
 var current_item: int = 0
 var used_choices: Dictionary[String, bool] = {}
@@ -83,9 +85,9 @@ func advance_conversation(marker) -> void:
 				advance_conversation(null)
 		else:
 			if lap < total_laps:
-				add_button("(cross)", null, null)
+				add_button("(finishline)", null, null)
 			else:
-				add_button("(finish)", null, null)
+				add_button("(finishline)", null, null)
 	elif item.has("you"):
 		for choice in item["you"]:
 			add_button(choice["line"], choice["next"], choice["id"])
@@ -98,8 +100,13 @@ func clear_buttons():
 
 func add_button(text, next, choice_id):
 	var button = Button.new()
-	button.text = text
-	button.disabled = used_choices.has(choice_id)
+	if text == "(finishline)":
+		button.icon = finishline
+		button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	else:
+		button.text = text
+	if choice_id:
+		button.disabled = used_choices.has(choice_id)
 	var callback = func your_line_button_callback():
 		if choice_id:
 			used_choices[choice_id] = true
