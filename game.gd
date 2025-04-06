@@ -15,23 +15,12 @@ func _process(_delta):
 	if $RaceScreen.completed:
 		$RaceScreen.completed = false
 		advance_mode()
-
-func apply_mode():
-	for child in get_children():
-		child.visible = false
-	if mode == 0:
-		$TitleScreen.visible = true
-	elif mode == 1:
-		$CharacterScreen.visible = true
-	elif mode == 2:
-		$OpponentScreen.visible = true
-	elif mode == 3:
-		$TrackScreen.visible = true
-	elif mode == 4:
-		var race = $RaceScreen
-		race.init()
-		race.visible = true
+		position.y = 0
+	if mode != 0:
+		var target_y = -720 * 2 * mode
+		position = position.lerp(Vector2(0, target_y), 0.05)
 
 func advance_mode():
 	mode = (mode + 1) % 5
-	apply_mode()
+	if mode == 4:
+		$RaceScreen.init()
