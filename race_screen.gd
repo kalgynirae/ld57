@@ -18,9 +18,8 @@ func init(completed_first_race: bool) -> void:
 	load_conversation("millie")
 	lap = 1
 	update_lap()
-
-	# TODO: animate start of race first
-	start_time = Time.get_ticks_msec()
+	reset_conversation()
+	$Hud.countdown()
 
 func _process(_delta: float) -> void:
 	if start_time:
@@ -29,6 +28,11 @@ func _process(_delta: float) -> void:
 		var seconds = (elapsed / 1000) % 60
 		var milliseconds = (elapsed % 1000) / 10
 		$Hud/Timer.text = "%02d:%02d.%02d" % [minutes, seconds, milliseconds]
+	else:
+		$Hud/Timer.text = "%02d:%02d.%02d" % [0, 0, 0]
+		if $Hud.countdown_finished:
+			start_time = Time.get_ticks_msec()
+			advance_conversation(null)
 
 func update_lap() -> void:
 	get_node("Hud/Box/Lap").text = "Lap %s/%s" % [lap, total_laps]
@@ -45,7 +49,6 @@ func load_conversation(conversation_name: String) -> void:
 	if json.parse(data) != OK:
 		push_error("Failed to parse conversation JSON: ", json.get_error_message())
 	conversation = json.data
-	reset_conversation()
 
 func jump_to_marker(marker) -> bool:
 	for i in range(len(conversation)):
@@ -68,7 +71,9 @@ func reset_conversation() -> void:
 	current_item = -1
 	used_choices = {}
 	completed = false
-	advance_conversation(null)
+	start_time = null
+	TheirLine().text = ""
+	clear_buttons()
 
 func advance_conversation(marker) -> void:
 	if marker and marker != "FINISH":
@@ -81,6 +86,7 @@ func advance_conversation(marker) -> void:
 				lap += 1
 				update_lap()
 				reset_conversation()
+				advance_conversation(null)
 			else:
 				completed = true
 			return

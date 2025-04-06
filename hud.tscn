@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtyeqoigtro7n"]
+[gd_scene load_steps=7 format=3 uid="uid://dtyeqoigtro7n"]
 
+[ext_resource type="Script" uid="uid://dkaplk4e272aj" path="res://hud.gd" id="1_1xsix"]
 [ext_resource type="FontFile" uid="uid://q0m1no78yfu5" path="res://fonts/Roboto-SemiBold.ttf" id="1_37p78"]
 [ext_resource type="Texture2D" uid="uid://pqg528gyde76" path="res://images/1.png" id="2_a2258"]
 [ext_resource type="Texture2D" uid="uid://nq55ii3winks" path="res://images/2.png" id="3_1xsix"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cc6pq2xrhd05o" path="res://images/Date.png" id="5_61f8s"]
 
 [node name="Hud" type="Node2D"]
+script = ExtResource("1_1xsix")
 
 [node name="Box" type="Polygon2D" parent="."]
 position = Vector2(64, 64)
@@ -36,19 +38,19 @@ text = "00:00.000"
 horizontal_alignment = 1
 
 [node name="Countdown" type="Timer" parent="."]
-wait_time = 1.2
+wait_time = 0.25
 
-[node name="3" type="Sprite2D" parent="."]
+[node name="Three" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(640, 360)
 texture = ExtResource("4_rftc2")
 
-[node name="2" type="Sprite2D" parent="."]
+[node name="Two" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(640, 360)
 texture = ExtResource("3_1xsix")
 
-[node name="1" type="Sprite2D" parent="."]
+[node name="One" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(640, 360)
 texture = ExtResource("2_a2258")
@@ -57,3 +59,5 @@ texture = ExtResource("2_a2258")
 visible = false
 position = Vector2(640, 360)
 texture = ExtResource("5_61f8s")
+
+[connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
