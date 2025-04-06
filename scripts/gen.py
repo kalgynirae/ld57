@@ -138,7 +138,10 @@ with conversation("test"):
 
 
 with conversation("millie"):
-    them("Hello! I haven't seen you around before. Are you new to the depths?")
+    them(
+        "Hello! I haven't seen you around before. Are you new to the depths?",
+        emote="neutral",
+    )
     you(
         {
             "Yes. I just dug down here earlier today!": 3,

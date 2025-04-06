@@ -1,6 +1,7 @@
 extends Node2D
 
 var mode = 0
+var completed_first_race = false
 
 func _ready():
 	$TitleScreen/Start.pressed.connect(advance_mode)
@@ -14,6 +15,7 @@ func _process(_delta):
 		get_tree().quit()
 	if $RaceScreen.completed:
 		$RaceScreen.completed = false
+		completed_first_race = true
 		advance_mode()
 		position.y = 0
 	if mode != 0:
@@ -23,4 +25,4 @@ func _process(_delta):
 func advance_mode():
 	mode = (mode + 1) % 5
 	if mode == 4:
-		$RaceScreen.init()
+		$RaceScreen.init(completed_first_race)

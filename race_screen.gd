@@ -6,13 +6,29 @@ var conversation = null
 var current_item: int = 0
 var used_choices: Dictionary[String, bool] = {}
 var lap: int = 0
-var total_laps: int = 3
+var total_laps: int = 2
 var completed = false
+var start_time = null
 
-func init() -> void:
+func init(completed_first_race: bool) -> void:
+	if completed_first_race:
+		$Hud/Timer.visible = true
+	else:
+		$Hud/Timer.visible = false
 	load_conversation("millie")
 	lap = 1
 	update_lap()
+
+	# TODO: animate start of race first
+	start_time = Time.get_ticks_msec()
+
+func _process(_delta: float) -> void:
+	if start_time:
+		var elapsed = Time.get_ticks_msec() - start_time
+		var minutes = elapsed / 60000
+		var seconds = (elapsed / 1000) % 60
+		var milliseconds = (elapsed % 1000) / 10
+		$Hud/Timer.text = "%02d:%02d.%02d" % [minutes, seconds, milliseconds]
 
 func update_lap() -> void:
 	get_node("Hud/Box/Lap").text = "Lap %s/%s" % [lap, total_laps]
