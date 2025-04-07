@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpaq6l8avn3h"]
+[gd_scene load_steps=11 format=3 uid="uid://bpaq6l8avn3h"]
 
 [ext_resource type="Texture2D" uid="uid://dfetq85xdg6jb" path="res://images/wormbodypink.png" id="2_045sq"]
 [ext_resource type="Texture2D" uid="uid://c8xjeq0cordfg" path="res://images/wormclothesblacktee.png" id="2_rn4yi"]
 [ext_resource type="Texture2D" uid="uid://4wpkxn6cxlou" path="res://images/wormeyesbeats.png" id="3_045sq"]
 [ext_resource type="Texture2D" uid="uid://bvqhppidduak5" path="res://images/characterselectframe.png" id="4_q5c7c"]
 [ext_resource type="Texture2D" uid="uid://dnag5tcu2fj47" path="res://images/Uparrow.png" id="4_qayua"]
+[ext_resource type="Texture2D" uid="uid://csonf6u8dmcsu" path="res://images/No Stats worm.png" id="5_o56ep"]
 [ext_resource type="Texture2D" uid="uid://cmg6uwfwjscdo" path="res://images/Uparrowpressed.png" id="5_q5c7c"]
+[ext_resource type="Texture2D" uid="uid://bc5h60u3u88rg" path="res://images/Stats worm.png" id="6_f2i2a"]
 [ext_resource type="Texture2D" uid="uid://canehuu2cv03m" path="res://images/downarrow.png" id="6_iy8fj"]
 [ext_resource type="Texture2D" uid="uid://bktsb148nvv5t" path="res://images/downarrowpressed.png" id="7_o56ep"]
 
@@ -95,56 +97,56 @@ vertical = true
 layout_mode = 2
 text = "Speed"
 
-[node name="SpeedBar" type="ProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
+[node name="SpeedBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(305, 15)
 layout_mode = 2
-step = 1.0
 value = 25.0
-show_percentage = false
+texture_under = ExtResource("5_o56ep")
+texture_progress = ExtResource("6_f2i2a")
 
 [node name="AccelerationLabel" type="Label" parent="PanelContainer/MarginContainer/BoxContainer"]
 layout_mode = 2
 text = "Acceleration"
 
-[node name="AccelerationBar" type="ProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
+[node name="AccelerationBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(305, 15)
 layout_mode = 2
-step = 1.0
 value = 73.0
-show_percentage = false
+texture_under = ExtResource("5_o56ep")
+texture_progress = ExtResource("6_f2i2a")
 
 [node name="WeightLabel" type="Label" parent="PanelContainer/MarginContainer/BoxContainer"]
 layout_mode = 2
 text = "Weight"
 
-[node name="WeightBar" type="ProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
+[node name="WeightBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(305, 15)
 layout_mode = 2
-step = 1.0
 value = 64.0
-show_percentage = false
+texture_under = ExtResource("5_o56ep")
+texture_progress = ExtResource("6_f2i2a")
 
 [node name="HandlingLabel" type="Label" parent="PanelContainer/MarginContainer/BoxContainer"]
 layout_mode = 2
 text = "Handling"
 
-[node name="HandlingBar" type="ProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
+[node name="HandlingBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(305, 15)
 layout_mode = 2
-step = 1.0
 value = 44.0
-show_percentage = false
+texture_under = ExtResource("5_o56ep")
+texture_progress = ExtResource("6_f2i2a")
 
 [node name="TractionLabel" type="Label" parent="PanelContainer/MarginContainer/BoxContainer"]
 layout_mode = 2
 text = "Traction"
 
-[node name="TractionBar" type="ProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
+[node name="TractionBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(305, 15)
 layout_mode = 2
-step = 1.0
 value = 80.0
-show_percentage = false
+texture_under = ExtResource("5_o56ep")
+texture_progress = ExtResource("6_f2i2a")
 
 [node name="PrevBody" type="TextureButton" parent="."]
 offset_left = 433.0
