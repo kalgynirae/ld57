@@ -1,6 +1,7 @@
 extends Node2D
 
 const finishline = preload("res://images/finishline.png")
+const millie = preload("res://millie.tscn")
 
 var conversation = null
 var current_item: int = 0
@@ -9,16 +10,31 @@ var lap: int = 0
 var total_laps: int = 2
 var completed = false
 var start_time = null
+var opponent = null
 
-func init(completed_first_race: bool) -> void:
+func _ready() -> void:
+	opponent = $Opponent
+
+func init(completed_first_race: bool, character_name: String) -> void:
 	if completed_first_race:
 		$Hud/Timer.visible = true
 	else:
 		$Hud/Timer.visible = false
-	load_conversation("millie")
+
+	match character_name:
+		"millie":
+			var old_position = opponent.position
+			remove_child(opponent)
+			var new = millie.instantiate()
+			new.position = old_position
+			add_child(new)
+			load_conversation("millie")
+
 	lap = 1
 	update_lap()
 	reset_conversation()
+
+func begin() -> void:
 	$Hud.countdown()
 
 func _process(_delta: float) -> void:
@@ -101,7 +117,7 @@ func advance_conversation(marker) -> void:
 	if item.has("them"):
 		TheirLine().text = item["them"]["line"]
 		if item["them"]["emote"]:
-			var opp = $Opponent/Sprite
+			var opp = opponent.get_node("Sprite")
 			match item["them"]["emote"]:
 				"neutral":
 					opp.animation = "default"

@@ -36,10 +36,14 @@ func advance_mode():
 		tween.tween_property(self, "position", Vector2(0, -720 * mode), 0.6)
 		if mode == 4:
 			tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.6)
+		tween.finished.connect(_on_transition_finished)
 
 	if mode == 4:
-		$RaceScreen.init(completed_first_race)
+		$RaceScreen.init(completed_first_race, "millie")
 
-
+func _on_transition_finished() -> void:
+	if mode == 4:
+		$RaceScreen.begin()
+	
 func _on_music_title_intro_finished() -> void:
 	$MusicTitleLoop.play()
