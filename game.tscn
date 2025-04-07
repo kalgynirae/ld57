@@ -23,20 +23,21 @@ script = ExtResource("1_e2o6t")
 [node name="TitleScreen" parent="." instance=ExtResource("2_fc0e3")]
 
 [node name="CharacterScreen" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(0, 720)
+position = Vector2(0, 940)
 script = ExtResource("4_eow3j")
 
 [node name="OpponentScreen" parent="." instance=ExtResource("4_ryrav")]
-position = Vector2(0, 1440)
+position = Vector2(0, 1740)
 button_group = SubResource("ButtonGroup_eow3j")
 
 [node name="TrackScreen" parent="." instance=ExtResource("5_eow3j")]
-position = Vector2(0, 2160)
+position = Vector2(0, 2640)
 script = ExtResource("7_j5wjh")
 button_group = ExtResource("8_vef74")
 
 [node name="RaceScreen" parent="." instance=ExtResource("2_feb5d")]
-position = Vector2(0, 2880)
+visible = false
+position = Vector2(0, 2640)
 
 [node name="MusicTitleIntro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_hve3p")
