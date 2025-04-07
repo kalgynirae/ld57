@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://buwgp24tuvtcx"]
 
-[ext_resource type="Texture2D" uid="uid://b75j2r0o4ut6n" path="res://images/characterselectbackground.png" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://cjrggunayjhp2" path="res://images/superdeeptitlescreen.png" id="1_v6p8y"]
 
 [node name="TitleScreen" type="Node2D"]
 
-[node name="Characterselectbackground" type="Sprite2D" parent="."]
+[node name="superdeeptitlescreen" type="Sprite2D" parent="."]
 texture = ExtResource("1_v6p8y")
 centered = false
 

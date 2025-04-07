@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bm7xgnkrly7uq"]
+[gd_scene load_steps=10 format=3 uid="uid://bm7xgnkrly7uq"]
 
-[ext_resource type="Script" path="res://opponent_screen.gd" id="1_c7os8"]
+[ext_resource type="Script" uid="uid://cahuaycds7iro" path="res://opponent_screen.gd" id="1_c7os8"]
 [ext_resource type="Texture2D" uid="uid://lpi3gpip8g2a" path="res://images/MillieButtonNormal.png" id="1_e2bi0"]
 [ext_resource type="ButtonGroup" uid="uid://co05pklw1wweb" path="res://opponent_button_group.tres" id="1_g64s2"]
 [ext_resource type="Texture2D" uid="uid://dl3lj0752ddiq" path="res://images/MillieButtonPressed1.png" id="2_jjs8b"]
-[ext_resource type="Texture2D" uid="uid://b75j2r0o4ut6n" path="res://images/characterselectbackground.png" id="3_g63kt"]
 [ext_resource type="Texture2D" uid="uid://c7r4y1e4d2kgd" path="res://images/MillieButtonPressed2.png" id="3_g64s2"]
 [ext_resource type="Texture2D" uid="uid://bespfiar01fqv" path="res://images/MillieButtonHover1.png" id="3_jjs8b"]
 [ext_resource type="Texture2D" uid="uid://o6y6b5e8cm6g" path="res://images/MillieButtonHover2.png" id="4_g64s2"]
@@ -26,10 +25,6 @@ frame_1/duration = 0.5
 [node name="OpponentScreen" type="Node2D"]
 script = ExtResource("1_c7os8")
 button_group = ExtResource("1_g64s2")
-
-[node name="Characterselectbackground" type="Sprite2D" parent="."]
-texture = ExtResource("3_g63kt")
-centered = false
 
 [node name="Label" type="Label" parent="."]
 offset_left = 429.0

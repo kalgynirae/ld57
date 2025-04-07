@@ -27,7 +27,12 @@ func advance_mode():
 		var tween = get_tree().create_tween()
 		tween.set_ease(Tween.EASE_OUT)
 		tween.set_trans(Tween.TRANS_QUAD)
-		tween.tween_property(self, "position", Vector2(0, -720 * 2 * mode), 0.7)
+		# Fade to black for entering race scene
+		if mode == 4:
+			tween.tween_property(self, "modulate", Color(0, 0, 0, 1), 0.6)
+		tween.tween_property(self, "position", Vector2(0, -720 * mode), 0.6)
+		if mode == 4:
+			tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.6)
 
 	if mode == 4:
 		$RaceScreen.init(completed_first_race)
