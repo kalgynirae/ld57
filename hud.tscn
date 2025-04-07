@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtyeqoigtro7n"]
+[gd_scene load_steps=19 format=3 uid="uid://dtyeqoigtro7n"]
 
 [ext_resource type="Script" uid="uid://dkaplk4e272aj" path="res://hud.gd" id="1_1xsix"]
 [ext_resource type="FontFile" uid="uid://q0m1no78yfu5" path="res://fonts/Roboto-SemiBold.ttf" id="1_37p78"]
@@ -7,6 +7,55 @@
 [ext_resource type="Texture2D" uid="uid://ci8hr8rys1bxf" path="res://images/3.png" id="4_rftc2"]
 [ext_resource type="Texture2D" uid="uid://cc6pq2xrhd05o" path="res://images/Date.png" id="5_61f8s"]
 [ext_resource type="AudioStream" uid="uid://dr0g5taqt0elp" path="res://audio/3 2 1 DATE.ogg" id="7_rftc2"]
+[ext_resource type="Texture2D" uid="uid://dys83x4f0bkqs" path="res://images/Itemblock.png" id="8_61f8s"]
+[ext_resource type="Texture2D" uid="uid://cn74ixepraxkv" path="res://images/BananaPowerup.png" id="8_gpiub"]
+[ext_resource type="Texture2D" uid="uid://ddal0a56wmhvv" path="res://images/ShellPowerup.png" id="9_1fv7p"]
+[ext_resource type="Texture2D" uid="uid://0us5o5inalra" path="res://images/StarPowerup.png" id="9_amv7k"]
+
+[sub_resource type="Gradient" id="Gradient_gpiub"]
+offsets = PackedFloat32Array(0, 0.666667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_amv7k"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g10ll"]
+atlas = ExtResource("8_61f8s")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpiub"]
+atlas = ExtResource("8_61f8s")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amv7k"]
+atlas = ExtResource("8_61f8s")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fv7p"]
+atlas = ExtResource("8_61f8s")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4u2vk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g10ll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpiub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amv7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fv7p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Hud" type="Node2D"]
 script = ExtResource("1_1xsix")
@@ -65,4 +114,61 @@ texture = ExtResource("5_61f8s")
 stream = ExtResource("7_rftc2")
 volume_db = -3.748
 
+[node name="Item" type="Polygon2D" parent="."]
+position = Vector2(0, 120)
+color = Color(0, 0, 0, 0.341176)
+polygon = PackedVector2Array(112, 232, 112, 312, 192, 312, 192, 232)
+
+[node name="Particles" type="CPUParticles2D" parent="Item"]
+position = Vector2(152, 272)
+emitting = false
+amount = 22
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.22
+direction = Vector2(0, -1)
+spread = 160.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 180.0
+initial_velocity_max = 240.0
+damping_min = 180.0
+damping_max = 180.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.9, 0.711, 0.711, 1)
+color_ramp = SubResource("Gradient_gpiub")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_amv7k")
+
+[node name="Banana" type="Sprite2D" parent="Item"]
+visible = false
+position = Vector2(152, 272)
+texture = ExtResource("8_gpiub")
+
+[node name="Shell" type="Sprite2D" parent="Item"]
+visible = false
+position = Vector2(152, 272)
+texture = ExtResource("9_1fv7p")
+
+[node name="Star" type="Sprite2D" parent="Item"]
+visible = false
+position = Vector2(152, 272)
+texture = ExtResource("9_amv7k")
+
+[node name="ItemBox" type="AnimatedSprite2D" parent="Item"]
+position = Vector2(152, 272)
+sprite_frames = SubResource("SpriteFrames_4u2vk")
+autoplay = "default"
+frame_progress = 0.15104
+
+[node name="ClickArea" type="Control" parent="Item"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 112.0
+offset_top = 232.0
+offset_right = 192.0
+offset_bottom = 312.0
+
 [connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
+[connection signal="gui_input" from="Item/ClickArea" to="." method="_on_click_area_gui_input"]

@@ -74,6 +74,8 @@ func reset_conversation() -> void:
 	start_time = null
 	TheirLine().text = ""
 	clear_buttons()
+	if lap > 1:
+		$Hud.show_item_block()
 
 func advance_conversation(marker) -> void:
 	if marker and marker != "FINISH":
