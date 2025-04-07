@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://byw24gpswocfn"]
+[gd_scene load_steps=7 format=3 uid="uid://byw24gpswocfn"]
 
 [ext_resource type="Script" uid="uid://ctmb7jyht6tyx" path="res://race_screen.gd" id="1_837h8"]
 [ext_resource type="PackedScene" uid="uid://dtyeqoigtro7n" path="res://hud.tscn" id="1_bqln3"]
 [ext_resource type="Texture2D" uid="uid://cvv7p1ytlao8a" path="res://images/datebackgroundschoolhouset.png" id="2_837h8"]
 [ext_resource type="PackedScene" uid="uid://b3aeacmk67yqp" path="res://conversation.tscn" id="2_l0475"]
 [ext_resource type="PackedScene" uid="uid://qm6ist4jedfh" path="res://millie.tscn" id="3_8wwll"]
+[ext_resource type="AudioStream" uid="uid://cg2rd5ra6yeo1" path="res://audio/race1.ogg" id="6_837h8"]
 
 [node name="RaceScreen" type="Node2D"]
 script = ExtResource("1_837h8")
@@ -22,3 +23,8 @@ region_rect = Rect2(0, 0, 1280, 720)
 position = Vector2(1052, 385)
 
 [node name="Hud" parent="." instance=ExtResource("1_bqln3")]
+
+[node name="MusicRace1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_837h8")
+volume_db = -3.0
+parameters/looping = true

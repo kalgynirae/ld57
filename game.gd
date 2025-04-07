@@ -15,6 +15,8 @@ func _ready():
 	tween.tween_property($TitleScreen/Title, "position", Vector2(0, 0), 0.6)
 	tween.tween_property($TitleScreen/Subtitle, "position", Vector2(568, 547), 5)
 
+	adjust_music(mode)
+
 func _process(_delta):
 	if Input.is_action_pressed("quit"):
 		get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
@@ -29,16 +31,15 @@ func advance_mode():
 	
 	$RaceScreen.visible = false
 
+	adjust_music(mode)
+
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
 
 	if mode == 0:
-		$MusicTitleIntro.play()
 		position = Vector2(0, 0)
 	elif mode < 4:
-		$MusicTitleLoop.stop()
-		$MusicTitleIntro.stop()
 		var target_y = 0
 		match mode:
 			1:
@@ -68,6 +69,26 @@ func _on_faded_to_black() -> void:
 func _on_transition_finished() -> void:
 	if mode == 4:
 		$RaceScreen.begin()
-	
+
+func adjust_music(new_mode: int) -> void:
+	match new_mode:
+		0:
+			var tween = get_tree().create_tween().set_parallel(true)
+			tween.tween_property($MusicTitleIntro, "volume_linear", 0.9, 1.0)
+			tween.tween_property($MusicTitleLoop, "volume_linear", 0.9, 1.0)
+			tween.tween_property($MusicMenusIntro, "volume_linear", 0.0, 1.0)
+			tween.tween_property($MusicMenusLoop, "volume_linear", 0.0, 1.0)
+		1:
+			var tween = get_tree().create_tween().set_parallel(true)
+			tween.tween_property($MusicTitleIntro, "volume_linear", 0.0, 1.0)
+			tween.tween_property($MusicTitleLoop, "volume_linear", 0.0, 1.0)
+			tween.tween_property($MusicMenusIntro, "volume_linear", 0.9, 1.0)
+			tween.tween_property($MusicMenusLoop, "volume_linear", 0.9, 1.0)
+		4:
+			var tween = get_tree().create_tween().set_parallel(true)
+			tween.tween_property($MusicMenusIntro, "volume_linear", 0.0, 1.0)
+			tween.tween_property($MusicMenusLoop, "volume_linear", 0.0, 1.0)
+				
 func _on_music_title_intro_finished() -> void:
 	$MusicTitleLoop.play()
+	$MusicMenusLoop.play()

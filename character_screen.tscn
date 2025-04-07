@@ -29,7 +29,6 @@ theme_override_font_sizes/font_size = 56
 text = "Select your date outfit"
 
 [node name="Proceed" type="Button" parent="."]
-anchors_preset = -1
 offset_left = 545.0
 offset_top = 630.0
 offset_right = 747.0

@@ -64,6 +64,8 @@ func _process(_delta: float) -> void:
 		$Hud/Timer.text = "%02d:%02d.%02d" % [0, 0, 0]
 		if $Hud.countdown_finished:
 			start_time = Time.get_ticks_msec()
+			if not $MusicRace1.playing:
+				$MusicRace1.play()
 			advance_conversation(null)
 
 func update_lap() -> void:
@@ -109,6 +111,10 @@ func reset_conversation() -> void:
 	if lap > 1:
 		$Hud.show_item_block()
 
+func finish_conversation() -> void:
+	completed = true
+	$MusicRace1.stop()
+
 func advance_conversation(marker) -> void:
 	if marker and marker != "FINISH":
 		if not jump_to_marker(marker):
@@ -122,7 +128,7 @@ func advance_conversation(marker) -> void:
 				reset_conversation()
 				advance_conversation(null)
 			else:
-				completed = true
+				finish_conversation()
 			return
 		while conversation[current_item].has("marker"):
 			current_item += 1
