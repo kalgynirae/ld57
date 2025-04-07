@@ -10,7 +10,9 @@ func countdown() -> void:
 
 func _on_countdown_timeout() -> void:
 	match countdown_state:
-		4: $Three.visible = true
+		4:
+			$Three.visible = true
+			$CountdownAudio.play()
 		7: $Three.visible = false
 		8: $Two.visible = true
 		11: $Two.visible = false

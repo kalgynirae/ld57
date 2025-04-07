@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dr0g5taqt0elp"
+path="res://.godot/imported/3 2 1 DATE.ogg-78ded5e71070b0436dc228c6bfb4f75a.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/3 2 1 DATE.ogg"
+dest_files=["res://.godot/imported/3 2 1 DATE.ogg-78ded5e71070b0436dc228c6bfb4f75a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
