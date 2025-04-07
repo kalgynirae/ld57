@@ -41,18 +41,8 @@ func advance_mode():
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
 
-	if mode == 0:
-		position = Vector2(0, 0)
-	elif mode < 4:
-		var target_y = 0
-		match mode:
-			1:
-				target_y = -$CharacterScreen.position.y
-			2:
-				target_y = -$OpponentScreen.position.y
-			3:
-				target_y = -$TrackScreen.position.y
-		tween.tween_property(self, "position", Vector2(0, target_y), 0.75)
+	if mode > 0 and mode < 4:
+		tween.tween_property(self, "position", get_target_position(), 0.75)
 	else:
 		# Fade to black for entering race and results scenes
 		tween.tween_property(self, "modulate", Color(0, 0, 0, 1), 0.6)
@@ -67,11 +57,26 @@ func advance_mode():
 		$RaceScreen.init(completed_first_race, selected_date, selected_track)
 
 func _on_faded_to_black() -> void:
+	if mode < 4:
+		position = get_target_position()
+		$RaceScreen.visible = false
+		$ResultsScreen.visible = false
 	if mode == 4:
 		$RaceScreen.visible = true
 	if mode == 5:
 		$ResultsScreen.init($RaceScreen.lap_times)
 		$ResultsScreen.visible = true
+
+func get_target_position() -> Vector2:
+	var target_y = 0
+	match mode:
+		1:
+			target_y = -$CharacterScreen.position.y
+		2:
+			target_y = -$OpponentScreen.position.y
+		3, 4, 5:
+			target_y = -$TrackScreen.position.y
+	return Vector2(0, target_y)
 
 func _on_transition_finished() -> void:
 	if mode == 4:
@@ -87,7 +92,7 @@ func adjust_music(new_mode: int) -> void:
 			tween.tween_property($MusicTitleLoop, "volume_linear", 0.9, 1.0)
 			tween.tween_property($MusicMenusIntro, "volume_linear", 0.0, 1.0)
 			tween.tween_property($MusicMenusLoop, "volume_linear", 0.0, 1.0)
-		1:
+		1, 5:
 			var tween = get_tree().create_tween().set_parallel(true)
 			tween.tween_property($MusicTitleIntro, "volume_linear", 0.0, 1.0)
 			tween.tween_property($MusicTitleLoop, "volume_linear", 0.0, 1.0)
