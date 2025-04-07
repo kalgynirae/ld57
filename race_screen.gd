@@ -35,6 +35,7 @@ func init(completed_first_race: bool, character_name: String, background_name: S
 			var new = millie.instantiate()
 			new.position = old_position
 			add_child(new)
+			total_laps = 2
 			load_conversation("millie")
 		"waspie":
 			var old_position = opponent.position
@@ -42,6 +43,7 @@ func init(completed_first_race: bool, character_name: String, background_name: S
 			var new = waspie.instantiate()
 			new.position = old_position
 			add_child(new)
+			total_laps = 3
 			load_conversation("waspie")
 
 	match background_name:
@@ -136,6 +138,7 @@ func advance_conversation(marker) -> void:
 		if current_item >= len(conversation) or marker == "FINISH":
 			if lap < total_laps:
 				lap += 1
+				$Hud.show_lap(lap, total_laps)
 				update_lap()
 				reset_conversation()
 			else:

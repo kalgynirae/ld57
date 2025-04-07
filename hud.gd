@@ -63,3 +63,13 @@ func _on_click_area_gui_input(event: InputEvent) -> void:
 		elif current_item != null:
 			# TODO: use the item
 			pass
+
+func show_lap(lap_number: int, total_laps: int) -> void:
+	var lap_text = null
+	if lap_number == total_laps:
+		lap_text = $LapFinal
+	elif lap_number == 2:
+		lap_text = $Lap2
+	lap_text.visible = true
+	await get_tree().create_timer(1.5).timeout
+	lap_text.visible = false

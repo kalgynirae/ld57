@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dtyeqoigtro7n"]
+[gd_scene load_steps=23 format=3 uid="uid://dtyeqoigtro7n"]
 
 [ext_resource type="Script" uid="uid://dkaplk4e272aj" path="res://hud.gd" id="1_1xsix"]
 [ext_resource type="FontFile" uid="uid://q0m1no78yfu5" path="res://fonts/Roboto-SemiBold.ttf" id="1_37p78"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://0us5o5inalra" path="res://images/StarPowerup.png" id="9_amv7k"]
 [ext_resource type="Texture2D" uid="uid://dxjqyqybeiy2q" path="res://images/BlueshellPowerup.png" id="11_4u2vk"]
 [ext_resource type="Texture2D" uid="uid://c4v13aq56miq1" path="res://images/MushroomPowerup.png" id="12_4q17s"]
+[ext_resource type="Texture2D" uid="uid://bdar7qg6oknfl" path="res://images/lap2.png" id="14_2d608"]
+[ext_resource type="Texture2D" uid="uid://cfqyekl3jllk5" path="res://images/finallap.png" id="15_w71nf"]
 
 [sub_resource type="Gradient" id="Gradient_gpiub"]
 offsets = PackedFloat32Array(0, 0.666667, 1)
@@ -111,6 +113,16 @@ texture = ExtResource("2_a2258")
 visible = false
 position = Vector2(640, 360)
 texture = ExtResource("5_61f8s")
+
+[node name="Lap2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+texture = ExtResource("14_2d608")
+
+[node name="LapFinal" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+texture = ExtResource("15_w71nf")
 
 [node name="CountdownAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_rftc2")
