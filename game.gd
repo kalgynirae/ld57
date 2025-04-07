@@ -62,17 +62,21 @@ func advance_mode():
 		)
 
 func _on_faded_to_black() -> void:
+	$TrackScreen.visible = true
+	$RaceScreen.visible = false
+	$ResultsScreen.visible = false
+		
 	# go from results screen back to character screen
 	if mode > 5:
 		mode = 1
 
 	if mode < 4:
 		position = get_target_position()
-		$RaceScreen.visible = false
-		$ResultsScreen.visible = false
 	if mode == 4:
+		$TrackScreen.visible = false
 		$RaceScreen.visible = true
 	if mode == 5:
+		$TrackScreen.visible = false
 		$ResultsScreen.init($RaceScreen.lap_times)
 		$ResultsScreen.visible = true
 
