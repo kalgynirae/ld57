@@ -1,0 +1,16 @@
+extends Node2D
+
+@export var button_group: ButtonGroup
+
+func _ready():
+	for button in button_group.get_buttons():
+		button.pressed.connect(button_pressed)
+		
+func button_pressed():
+	var pressed_button = button_group.get_pressed_button()
+	if pressed_button == $SchoolButton:
+		$Proceed.disabled = false
+		$Proceed.tooltip_text = ""
+	else:
+		$Proceed.disabled = true
+		$Proceed.tooltip_text = "You have not unlocked this track yet!"

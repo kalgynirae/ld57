@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://u76quktxaryv"]
+[gd_scene load_steps=12 format=3 uid="uid://u76quktxaryv"]
 
 [ext_resource type="Script" uid="uid://bxby5voubx8m8" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://buwgp24tuvtcx" path="res://title_screen.tscn" id="2_fc0e3"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://27084erkmx1h" path="res://character_screen.gd" id="4_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bm7xgnkrly7uq" path="res://opponent_screen.tscn" id="4_ryrav"]
 [ext_resource type="PackedScene" uid="uid://cu1iaadae4xhq" path="res://track_screen.tscn" id="5_eow3j"]
+[ext_resource type="Script" uid="uid://du6uvi7btuoy" path="res://track_screen.gd" id="7_j5wjh"]
+[ext_resource type="ButtonGroup" uid="uid://c2152408pae2a" path="res://track_button_group.tres" id="8_vef74"]
 
 [sub_resource type="GDScript" id="GDScript_dyxf4"]
 
@@ -28,6 +30,8 @@ button_group = SubResource("ButtonGroup_eow3j")
 
 [node name="TrackScreen" parent="." instance=ExtResource("5_eow3j")]
 position = Vector2(0, 2160)
+script = ExtResource("7_j5wjh")
+button_group = ExtResource("8_vef74")
 
 [node name="RaceScreen" parent="." instance=ExtResource("2_feb5d")]
 position = Vector2(0, 2880)
