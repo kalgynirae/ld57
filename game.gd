@@ -44,11 +44,6 @@ func advance_mode():
 	if mode == 0:
 		position = Vector2(0, 0)
 	elif mode < 4:
-		$MusicTitleLoop.stop()
-		$MusicTitleIntro.stop()
-		$RaceScreen.visible = false
-		$ResultsScreen.visible = false
-	
 		var target_y = 0
 		match mode:
 			1:
