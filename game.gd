@@ -17,12 +17,17 @@ func _process(_delta):
 		$RaceScreen.completed = false
 		completed_first_race = true
 		advance_mode()
-		position.y = 0
-	if mode != 0:
-		var target_y = -720 * 2 * mode
-		position = position.lerp(Vector2(0, target_y), 0.05)
 
 func advance_mode():
 	mode = (mode + 1) % 5
+
+	if mode == 0:
+		position = Vector2(0, 0)
+	else:
+		var tween = get_tree().create_tween()
+		tween.set_ease(Tween.EASE_OUT)
+		tween.set_trans(Tween.TRANS_QUAD)
+		tween.tween_property(self, "position", Vector2(0, -720 * 2 * mode), 0.7)
+
 	if mode == 4:
 		$RaceScreen.init(completed_first_race)
