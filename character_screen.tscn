@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpaq6l8avn3h"]
+[gd_scene load_steps=8 format=3 uid="uid://bpaq6l8avn3h"]
 
 [ext_resource type="Texture2D" uid="uid://dfetq85xdg6jb" path="res://images/wormbodypink.png" id="2_045sq"]
 [ext_resource type="Texture2D" uid="uid://c8xjeq0cordfg" path="res://images/wormclothesblacktee.png" id="2_rn4yi"]
 [ext_resource type="Texture2D" uid="uid://4wpkxn6cxlou" path="res://images/wormeyesbeats.png" id="3_045sq"]
+[ext_resource type="Texture2D" uid="uid://dnag5tcu2fj47" path="res://images/Uparrow.png" id="4_qayua"]
+[ext_resource type="Texture2D" uid="uid://cmg6uwfwjscdo" path="res://images/Uparrowpressed.png" id="5_q5c7c"]
+[ext_resource type="Texture2D" uid="uid://canehuu2cv03m" path="res://images/downarrow.png" id="6_iy8fj"]
+[ext_resource type="Texture2D" uid="uid://bktsb148nvv5t" path="res://images/downarrowpressed.png" id="7_o56ep"]
 
 [node name="CharacterScreen" type="Node2D"]
 
@@ -56,34 +60,34 @@ position = Vector2(253, 412)
 texture = ExtResource("2_rn4yi")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 411.0
-offset_top = 328.0
-offset_right = 534.0
+offset_left = 400.0
+offset_top = 323.0
+offset_right = 535.0
 offset_bottom = 467.0
 
 [node name="SelectedBody" type="Sprite2D" parent="."]
-position = Vector2(480.5, 392)
+position = Vector2(479, 391)
 scale = Vector2(0.449219, 0.449219)
 texture = ExtResource("2_045sq")
 
 [node name="Panel2" type="Panel" parent="."]
-offset_left = 545.0
+offset_left = 548.0
 offset_top = 327.0
-offset_right = 697.0
+offset_right = 700.0
 offset_bottom = 466.0
 
 [node name="SelectedEyes" type="Sprite2D" parent="."]
-position = Vector2(626.5, 469)
+position = Vector2(629.5, 469)
 texture = ExtResource("3_045sq")
 
 [node name="Panel3" type="Panel" parent="."]
-offset_left = 707.0
+offset_left = 711.0
 offset_top = 328.0
-offset_right = 835.0
+offset_right = 855.0
 offset_bottom = 467.0
 
 [node name="SelectedClothes" type="Sprite2D" parent="."]
-position = Vector2(757.5, 379)
+position = Vector2(777.5, 387)
 texture = ExtResource("2_rn4yi")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -154,65 +158,71 @@ step = 1.0
 value = 80.0
 show_percentage = false
 
-[node name="PrevBody" type="Button" parent="."]
-offset_left = 456.0
-offset_top = 281.0
-offset_right = 490.0
+[node name="PrevBody" type="TextureButton" parent="."]
+offset_left = 386.0
+offset_top = 224.0
+offset_right = 546.0
 offset_bottom = 312.0
-text = "  ^  "
+texture_normal = ExtResource("4_qayua")
+texture_pressed = ExtResource("5_q5c7c")
 
-[node name="NextBody" type="Button" parent="."]
-offset_left = 458.0
-offset_top = 484.0
-offset_right = 492.0
-offset_bottom = 515.0
-text = "  v  "
+[node name="NextBody" type="TextureButton" parent="."]
+offset_left = 391.0
+offset_top = 479.0
+offset_right = 543.0
+offset_bottom = 567.0
+texture_normal = ExtResource("6_iy8fj")
+texture_pressed = ExtResource("7_o56ep")
 
-[node name="PrevEyes" type="Button" parent="."]
-offset_left = 601.0
-offset_top = 281.0
-offset_right = 638.0
-offset_bottom = 313.0
-text = "  ^  "
+[node name="PrevEyes" type="TextureButton" parent="."]
+offset_left = 544.0
+offset_top = 224.0
+offset_right = 704.0
+offset_bottom = 312.0
+texture_normal = ExtResource("4_qayua")
+texture_pressed = ExtResource("5_q5c7c")
 
-[node name="NextEyes" type="Button" parent="."]
-offset_left = 600.0
-offset_top = 485.0
-offset_right = 638.0
-offset_bottom = 517.0
-text = "  v  "
+[node name="NextEyes" type="TextureButton" parent="."]
+offset_left = 547.0
+offset_top = 480.0
+offset_right = 699.0
+offset_bottom = 568.0
+texture_normal = ExtResource("6_iy8fj")
+texture_pressed = ExtResource("7_o56ep")
 
-[node name="PrevClothes" type="Button" parent="."]
-offset_left = 751.0
-offset_top = 283.0
-offset_right = 788.0
-offset_bottom = 315.0
-text = "  ^  "
+[node name="PrevClothes" type="TextureButton" parent="."]
+offset_left = 703.0
+offset_top = 226.0
+offset_right = 863.0
+offset_bottom = 314.0
+texture_normal = ExtResource("4_qayua")
+texture_pressed = ExtResource("5_q5c7c")
 
-[node name="NextClothes" type="Button" parent="."]
-offset_left = 749.0
-offset_top = 486.0
-offset_right = 787.0
-offset_bottom = 518.0
-text = "  v  "
+[node name="NextClothes" type="TextureButton" parent="."]
+offset_left = 708.0
+offset_top = 481.0
+offset_right = 860.0
+offset_bottom = 569.0
+texture_normal = ExtResource("6_iy8fj")
+texture_pressed = ExtResource("7_o56ep")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 443.0
-offset_top = 535.0
-offset_right = 511.0
-offset_bottom = 568.0
+offset_left = 435.0
+offset_top = 579.0
+offset_right = 503.0
+offset_bottom = 612.0
 text = "Chassis"
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 589.0
-offset_top = 536.0
-offset_right = 657.0
-offset_bottom = 569.0
+offset_left = 592.0
+offset_top = 580.0
+offset_right = 660.0
+offset_bottom = 613.0
 text = "Wheels"
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 741.0
-offset_top = 536.0
-offset_right = 809.0
-offset_bottom = 569.0
+offset_left = 750.0
+offset_top = 580.0
+offset_right = 818.0
+offset_bottom = 613.0
 text = "Glider"
