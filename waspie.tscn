@@ -67,7 +67,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"laugh",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -78,14 +78,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"surprise",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Waspie" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(9, 9)
 sprite_frames = SubResource("SpriteFrames_io86u")
+animation = &"surprise"
 autoplay = "default"
-frame_progress = 0.981327

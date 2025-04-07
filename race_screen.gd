@@ -32,17 +32,17 @@ func init(completed_first_race: bool, character_name: String, background_name: S
 		"millie":
 			var old_position = opponent.position
 			remove_child(opponent)
-			var new = millie.instantiate()
-			new.position = old_position
-			add_child(new)
+			opponent = millie.instantiate()
+			opponent.position = old_position
+			add_child(opponent)
 			total_laps = 2
 			load_conversation("millie")
 		"waspie":
 			var old_position = opponent.position
 			remove_child(opponent)
-			var new = waspie.instantiate()
-			new.position = old_position
-			add_child(new)
+			opponent = waspie.instantiate()
+			opponent.position = old_position
+			add_child(opponent)
 			total_laps = 3
 			load_conversation("waspie")
 
@@ -52,6 +52,7 @@ func init(completed_first_race: bool, character_name: String, background_name: S
 		"park":
 			$DateBackground.texture = park_background
 
+	lap_times = []
 	lap = 1
 	update_lap()
 	reset_conversation()
@@ -74,6 +75,7 @@ func _process(_delta: float) -> void:
 				$MusicRace1.pitch_scale = 1.0
 				$MusicRace1.play()
 			advance_conversation(null)
+			$Hud.countdown_finished = false
 
 func update_lap() -> void:
 	get_node("Hud/Box/Lap").text = "Lap %s/%s" % [lap, total_laps]
@@ -142,6 +144,7 @@ func advance_conversation(marker) -> void:
 				$Hud.show_lap(lap, total_laps)
 				update_lap()
 				reset_conversation()
+				advance_conversation(null)
 				if lap == total_laps:
 					play_final_lap()
 			else:
@@ -171,6 +174,8 @@ func advance_conversation(marker) -> void:
 					opp.animation = "surprise"
 				"uwu":
 					opp.animation = "uwu"
+				"laugh":
+					opp.animation = "laugh"
 		if item["them"]["next"]:
 			add_button("...", item["them"]["next"], null)
 		elif next_item:
