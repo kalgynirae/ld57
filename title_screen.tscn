@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://buwgp24tuvtcx"]
+[gd_scene load_steps=4 format=3 uid="uid://buwgp24tuvtcx"]
 
 [ext_resource type="Texture2D" uid="uid://cjrggunayjhp2" path="res://images/superdeeptitlescreen.png" id="1_v6p8y"]
 [ext_resource type="Texture2D" uid="uid://chu3pl862efmg" path="res://images/Title.png" id="2_ak2if"]
+[ext_resource type="Texture2D" uid="uid://dvrepqnn4cw07" path="res://images/testworm.png" id="2_ig5kc"]
 
 [node name="TitleScreen" type="Node2D"]
 
@@ -30,19 +31,25 @@ offset_right = 744.0
 offset_bottom = 661.0
 text = "     Don't Start     "
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 568.0
+[node name="Subtitle" type="Label" parent="."]
+offset_left = -137.0
 offset_top = 547.0
-offset_right = 706.0
+offset_right = 1.0
 offset_bottom = 574.0
 theme_override_font_sizes/font_size = 14
 text = "It's not that deep..."
 
+[node name="Sprite2D" type="Sprite2D" parent="Subtitle"]
+position = Vector2(-7, 9)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("2_ig5kc")
+
 [node name="Title" type="Sprite2D" parent="."]
+position = Vector2(-1000, 0)
 texture = ExtResource("2_ak2if")
 centered = false
 
-[node name="Label" type="Label" parent="."]
+[node name="developers" type="Label" parent="."]
 offset_left = 1186.0
 offset_top = 7.0
 offset_right = 1275.0

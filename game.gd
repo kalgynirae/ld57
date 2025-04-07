@@ -8,6 +8,12 @@ func _ready():
 	$CharacterScreen/Proceed.pressed.connect(advance_mode)
 	$OpponentScreen/Proceed.pressed.connect(advance_mode)
 	$TrackScreen/Proceed.pressed.connect(advance_mode)
+	
+	var tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.tween_property($TitleScreen/Title, "position", Vector2(0, 0), 0.6)
+	tween.tween_property($TitleScreen/Subtitle, "position", Vector2(568, 547), 5)
 
 func _process(_delta):
 	if Input.is_action_pressed("quit"):
