@@ -312,6 +312,7 @@ with conversation("waspie"):
             "Neat! Bye!": None,
         }
     )
+    them("Bye.")
     end()
 
     marker("date")
