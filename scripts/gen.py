@@ -251,4 +251,110 @@ with conversation("millie"):
     marker("end")
     them("It's been great meeting you!", emote="neutral")
 
+
+with conversation("waspie"):
+    them("", emote="neutral")
+    you(
+        {
+            "So... how's the weather today?": "weather",
+            "So... how do you feel about [ACCESSORIES]?": "accessory",
+            "So... what does the “J.B.” stand for?": "jb",
+        }
+    )
+
+    marker("jb")
+    them("That's Jone of your Business!", emote="laugh", next="start")
+
+    marker("accessory")
+    them("They're kinda dumb.", emote="laugh")
+    them("Well...", emote="neutral")
+    them("Yours looks okay I guess.")
+    you({"Thanks! I dressed up for our date.": "date"})
+
+    marker("weather")
+    them(
+        "How should I know? Everybody knows we don't get “weather” down here in the depths.",
+        emote="anger",
+    )
+    them("Why don't you go see for yourself?", emote="neutral")
+    you(
+        {
+            "The surface is too far away.": "far",
+            "It takes too long to get up there and back.": "long",
+            "Um... we're on a date right now.": "date",
+        }
+    )
+
+    marker("far")
+    them("I suppose it would seem far to someone who can't fly.", emote="surprise")
+    you(
+        {
+            "Yeah, I've always wished I could fly.": "gym",
+            "*grows wings*": None,
+        }
+    )
+    them("...", emote="surprise")
+    you("...")
+    them("...", emote="neutral")
+    you(
+        {
+            "... I guess it didn't work.": "gym",
+        }
+    )
+
+    marker("long")
+    them(
+        "It takes less time than you'd think! Maybe you should try right now. (Maybe I'll be gone when you get back.)",
+        emote="neutral",
+    )
+    you(
+        {
+            "But aren't we on a date?": "date",
+            "Neat! Bye!": None,
+        }
+    )
+    end()
+
+    marker("date")
+    them("A date? With a worm? Hahahahahahahahaha", emote="laugh")
+    them(
+        "This is no date. I'm on my way to the gym, and you won't stop bothering me.",
+        emote="neutral",
+    )
+    them("...")
+
+    marker("gym")
+    them("You should consider hitting the gym yourself.", emote="neutral")
+    you(
+        {
+            "Are you insulting my wormy physique??": None,
+            "Do you want to train together?": "train",
+        }
+    )
+    them("YES. You're very wormy.", emote="laugh")
+    you(
+        {
+            "That's my best feature.": "gym",
+            "Hey! That's mean :(": "mean",
+        }
+    )
+
+    marker("train")
+    them("No thanks. See you around, maybe.", emote="neutral")
+    end()
+
+    marker("mean")
+    them("Well quit bothering me and I won't say mean things to you!", emote="anger")
+    you(
+        {
+            "No.": "no",
+            "OK": None,
+        }
+    )
+    end()
+
+    marker("no")
+    them("GET OUT OF MY SIGHT, WORM!", emote="anger")
+    end()
+
 dump_scripts()
