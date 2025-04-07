@@ -71,6 +71,7 @@ func _process(_delta: float) -> void:
 		if $Hud.countdown_finished:
 			start_time = Time.get_ticks_msec()
 			if not $MusicRace1.playing:
+				$MusicRace1.pitch_scale = 1.0
 				$MusicRace1.play()
 			advance_conversation(null)
 
@@ -141,6 +142,8 @@ func advance_conversation(marker) -> void:
 				$Hud.show_lap(lap, total_laps)
 				update_lap()
 				reset_conversation()
+				if lap == total_laps:
+					play_final_lap()
 			else:
 				update_lap_time()
 				finish_conversation()
@@ -210,3 +213,7 @@ func add_button(text, next, choice_id):
 
 func replace_placeholders(line: String) -> String:
 	return line.replace("[ACCESSORY]", accessory_name).replace("[ACCESSORIES]", accessory_name + "s")
+
+func play_final_lap() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property($MusicRace1, "pitch_scale", 1.12, 1.0)
