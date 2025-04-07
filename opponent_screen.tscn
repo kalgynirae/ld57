@@ -27,12 +27,19 @@ script = ExtResource("1_c7os8")
 button_group = ExtResource("1_g64s2")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 429.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 443.0
 offset_top = 138.0
-offset_right = 834.0
+offset_right = 853.0
 offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "Opponent select"
+text = "Select your date"
 
 [node name="Proceed" type="Button" parent="."]
 anchors_preset = 8

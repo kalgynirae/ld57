@@ -7,26 +7,28 @@
 [node name="CharacterScreen" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 423.0
-offset_top = 148.0
-offset_right = 793.0
-offset_bottom = 229.0
-theme_override_font_sizes/font_size = 56
-text = "Character select"
-
-[node name="Proceed" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 500.0
-offset_top = 630.0
-offset_right = 733.0
-offset_bottom = 661.0
+offset_left = 360.0
+offset_top = 138.0
+offset_right = 924.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "I am satisfied with how I look"
+theme_override_font_sizes/font_size = 56
+text = "Select your date outfit"
+
+[node name="Proceed" type="Button" parent="."]
+anchors_preset = -1
+offset_left = 545.0
+offset_top = 630.0
+offset_right = 747.0
+offset_bottom = 662.0
+grow_horizontal = 2
+text = "Good enough!"
 
 [node name="Panel4" type="Panel" parent="."]
 anchors_preset = 8
@@ -167,29 +169,50 @@ offset_bottom = 515.0
 text = "  v  "
 
 [node name="PrevEyes" type="Button" parent="."]
-offset_left = 608.0
+offset_left = 601.0
 offset_top = 281.0
-offset_right = 642.0
-offset_bottom = 312.0
+offset_right = 638.0
+offset_bottom = 313.0
 text = "  ^  "
 
 [node name="NextEyes" type="Button" parent="."]
-offset_left = 609.0
-offset_top = 486.0
-offset_right = 643.0
+offset_left = 600.0
+offset_top = 485.0
+offset_right = 638.0
 offset_bottom = 517.0
 text = "  v  "
 
 [node name="PrevClothes" type="Button" parent="."]
-offset_left = 756.0
+offset_left = 751.0
 offset_top = 283.0
-offset_right = 790.0
-offset_bottom = 314.0
+offset_right = 788.0
+offset_bottom = 315.0
 text = "  ^  "
 
 [node name="NextClothes" type="Button" parent="."]
-offset_left = 759.0
+offset_left = 749.0
 offset_top = 486.0
-offset_right = 793.0
-offset_bottom = 517.0
+offset_right = 787.0
+offset_bottom = 518.0
 text = "  v  "
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 443.0
+offset_top = 535.0
+offset_right = 511.0
+offset_bottom = 568.0
+text = "Chassis"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 589.0
+offset_top = 536.0
+offset_right = 657.0
+offset_bottom = 569.0
+text = "Wheels"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 741.0
+offset_top = 536.0
+offset_right = 809.0
+offset_bottom = 569.0
+text = "Glider"
