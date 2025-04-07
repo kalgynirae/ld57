@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bm7xgnkrly7uq"]
+[gd_scene load_steps=17 format=3 uid="uid://bm7xgnkrly7uq"]
 
 [ext_resource type="Script" uid="uid://cahuaycds7iro" path="res://opponent_screen.gd" id="1_c7os8"]
 [ext_resource type="ButtonGroup" uid="uid://co05pklw1wweb" path="res://opponent_button_group.tres" id="1_g64s2"]
@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dyntfkw78ivhd" path="res://images/Millie Button pressed 1.png" id="4_obp43"]
 [ext_resource type="Texture2D" uid="uid://dlq1u0025rqgq" path="res://images/Millie Button pressed 2.png" id="5_gkomh"]
 [ext_resource type="Texture2D" uid="uid://blk35ojj26n53" path="res://images/Millie Button 1.png" id="6_714pd"]
+[ext_resource type="Texture2D" uid="uid://68bnrjax04kn" path="res://images/Waspie button.png" id="7_lnpep"]
 [ext_resource type="Texture2D" uid="uid://ks6lkvrja78a" path="res://images/Question Mark.png" id="8_g63kt"]
-[ext_resource type="Texture2D" uid="uid://bbkwpuded8vjj" path="res://images/Wasp.png" id="8_obp43"]
+[ext_resource type="Texture2D" uid="uid://ddosvuq74f6ff" path="res://images/Waspie Button pressed 1.png" id="8_u2t0i"]
+[ext_resource type="Texture2D" uid="uid://bal643grsosin" path="res://images/Waspie Button pressed 2.png" id="9_c24tg"]
+[ext_resource type="Texture2D" uid="uid://cp45lp3nmm51a" path="res://images/Waspie Button 1.png" id="10_i4ggt"]
+[ext_resource type="Texture2D" uid="uid://e6wh4rwo2s1e" path="res://images/Waspie Button 2.png" id="11_0x8ek"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_jjs8b"]
 frames = 2
@@ -23,13 +27,19 @@ frame_0/duration = 0.5
 frame_1/texture = ExtResource("3_g63kt")
 frame_1/duration = 0.5
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gkomh"]
-atlas = ExtResource("8_obp43")
-region = Rect2(0, 0, 32, 34)
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_14ohm"]
+frames = 2
+frame_0/texture = ExtResource("8_u2t0i")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("9_c24tg")
+frame_1/duration = 0.5
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_714pd"]
-atlas = ExtResource("8_obp43")
-region = Rect2(0, 48, 32, 34)
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_w83ex"]
+frames = 2
+speed_scale = 1.4
+frame_0/texture = ExtResource("11_0x8ek")
+frame_1/texture = ExtResource("10_i4ggt")
+frame_1/duration = 1.0
 
 [node name="OpponentScreen" type="Node2D"]
 script = ExtResource("1_c7os8")
@@ -87,9 +97,9 @@ offset_right = 616.0
 offset_bottom = 512.0
 toggle_mode = true
 button_group = ExtResource("1_g64s2")
-texture_normal = SubResource("AtlasTexture_gkomh")
-texture_pressed = SubResource("AtlasTexture_gkomh")
-texture_hover = SubResource("AtlasTexture_714pd")
+texture_normal = ExtResource("7_lnpep")
+texture_pressed = SubResource("AnimatedTexture_14ohm")
+texture_hover = SubResource("AnimatedTexture_w83ex")
 stretch_mode = 0
 
 [node name="QuestionButton2" type="TextureButton" parent="."]
