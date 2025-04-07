@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bm7xgnkrly7uq"]
+[gd_scene load_steps=14 format=3 uid="uid://bm7xgnkrly7uq"]
 
 [ext_resource type="Script" uid="uid://cahuaycds7iro" path="res://opponent_screen.gd" id="1_c7os8"]
 [ext_resource type="Texture2D" uid="uid://lpi3gpip8g2a" path="res://images/MillieButtonNormal.png" id="1_e2bi0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bespfiar01fqv" path="res://images/MillieButtonHover1.png" id="3_jjs8b"]
 [ext_resource type="Texture2D" uid="uid://o6y6b5e8cm6g" path="res://images/MillieButtonHover2.png" id="4_g64s2"]
 [ext_resource type="Texture2D" uid="uid://ks6lkvrja78a" path="res://images/Question Mark.png" id="8_g63kt"]
+[ext_resource type="Texture2D" uid="uid://bbkwpuded8vjj" path="res://images/Wasp.png" id="8_obp43"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_jjs8b"]
 frames = 2
@@ -22,6 +23,14 @@ frame_0/texture = ExtResource("3_jjs8b")
 frame_0/duration = 0.5
 frame_1/texture = ExtResource("4_g64s2")
 frame_1/duration = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkomh"]
+atlas = ExtResource("8_obp43")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_714pd"]
+atlas = ExtResource("8_obp43")
+region = Rect2(0, 48, 32, 34)
 
 [node name="OpponentScreen" type="Node2D"]
 script = ExtResource("1_c7os8")
@@ -71,7 +80,7 @@ texture_normal = ExtResource("1_e2bi0")
 texture_pressed = SubResource("AnimatedTexture_jjs8b")
 texture_hover = SubResource("AnimatedTexture_c7os8")
 
-[node name="QuestionButton" type="TextureButton" parent="."]
+[node name="WaspieButton" type="TextureButton" parent="."]
 texture_filter = 1
 offset_left = 418.0
 offset_top = 320.0
@@ -79,7 +88,9 @@ offset_right = 616.0
 offset_bottom = 512.0
 toggle_mode = true
 button_group = ExtResource("1_g64s2")
-texture_normal = ExtResource("8_g63kt")
+texture_normal = SubResource("AtlasTexture_gkomh")
+texture_pressed = SubResource("AtlasTexture_gkomh")
+texture_hover = SubResource("AtlasTexture_714pd")
 stretch_mode = 0
 
 [node name="QuestionButton2" type="TextureButton" parent="."]

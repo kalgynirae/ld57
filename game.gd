@@ -57,7 +57,8 @@ func advance_mode():
 	tween.finished.connect(_on_transition_finished)
 
 	if mode == 4:
-		$RaceScreen.init(completed_first_race, "millie")
+		var selected_date = $OpponentScreen.selected_date
+		$RaceScreen.init(completed_first_race, selected_date)
 
 func _on_faded_to_black() -> void:
 	if mode == 4:

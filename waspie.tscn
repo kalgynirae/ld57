@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://byc72sqrhdjn3"]
+
+[ext_resource type="Texture2D" uid="uid://bbkwpuded8vjj" path="res://images/Wasp.png" id="1_ufefu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba3ts"]
+atlas = ExtResource("1_ufefu")
+region = Rect2(0, 144, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7av1"]
+atlas = ExtResource("1_ufefu")
+region = Rect2(32, 144, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw2md"]
+atlas = ExtResource("1_ufefu")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qyis"]
+atlas = ExtResource("1_ufefu")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hljqk"]
+atlas = ExtResource("1_ufefu")
+region = Rect2(0, 96, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4wtq"]
+atlas = ExtResource("1_ufefu")
+region = Rect2(32, 96, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suwhw"]
+atlas = ExtResource("1_ufefu")
+region = Rect2(0, 48, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv2b6"]
+atlas = ExtResource("1_ufefu")
+region = Rect2(32, 48, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_io86u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba3ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7av1")
+}],
+"loop": true,
+"name": &"anger",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw2md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qyis")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hljqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4wtq")
+}],
+"loop": true,
+"name": &"laugh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suwhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv2b6")
+}],
+"loop": true,
+"name": &"surprise",
+"speed": 5.0
+}]
+
+[node name="Waspie" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_io86u")
+autoplay = "default"
+frame_progress = 0.0252106

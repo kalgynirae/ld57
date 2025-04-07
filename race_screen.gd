@@ -2,6 +2,7 @@ extends Node2D
 
 const finishline = preload("res://images/finishline.png")
 const millie = preload("res://millie.tscn")
+const waspie = preload("res://waspie.tscn")
 
 var conversation = null
 var current_item: int = 0
@@ -29,6 +30,13 @@ func init(completed_first_race: bool, character_name: String) -> void:
 			new.position = old_position
 			add_child(new)
 			load_conversation("millie")
+		"waspie":
+			var old_position = opponent.position
+			remove_child(opponent)
+			var new = waspie.instantiate()
+			new.position = old_position
+			add_child(new)
+			load_conversation("waspie")
 
 	lap = 1
 	update_lap()
