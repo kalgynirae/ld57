@@ -33,7 +33,7 @@ func _process(_delta):
 		advance_mode()
 
 func advance_mode():
-	mode = (mode + 1) % 6
+	mode += 1
 
 	adjust_music(mode)
 
@@ -41,7 +41,7 @@ func advance_mode():
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
 
-	if mode > 0 and mode < 4:
+	if mode < 4:
 		tween.tween_property(self, "position", get_target_position(), 0.75)
 	else:
 		# Fade to black for entering race and results scenes
@@ -62,6 +62,10 @@ func advance_mode():
 		)
 
 func _on_faded_to_black() -> void:
+	# go from results screen back to character screen
+	if mode > 5:
+		mode = 1
+
 	if mode < 4:
 		position = get_target_position()
 		$RaceScreen.visible = false
