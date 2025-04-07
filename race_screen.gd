@@ -15,11 +15,14 @@ var lap_times: Array[int] = []
 var completed = false
 var start_time = null
 var opponent = null
+var accessory_name = null
 
 func _ready() -> void:
 	opponent = $Opponent
 
-func init(completed_first_race: bool, character_name: String, background_name: String) -> void:
+func init(completed_first_race: bool, character_name: String, background_name: String, clothes_name: String) -> void:
+	accessory_name = clothes_name
+
 	if completed_first_race:
 		$Hud/Timer.visible = true
 	else:
@@ -146,7 +149,7 @@ func advance_conversation(marker) -> void:
 	var next_item = next_conversation_item()
 	clear_buttons()
 	if item.has("them"):
-		TheirLine().text = item["them"]["line"]
+		TheirLine().text = replace_placeholders(item["them"]["line"])
 		if item["them"]["emote"]:
 			var opp = opponent.get_node("Sprite")
 			match item["them"]["emote"]:
@@ -177,7 +180,7 @@ func advance_conversation(marker) -> void:
 			add_button("(finishline)", "FINISH", null)
 	elif item.has("you"):
 		for choice in item["you"]:
-			add_button(choice["line"], choice["next"], choice["id"])
+			add_button(replace_placeholders(choice["line"]), choice["next"], choice["id"])
 	else:
 		push_error("item had neither 'them' or 'you': %s" % item)
 
@@ -201,3 +204,6 @@ func add_button(text, next, choice_id):
 		advance_conversation(next)
 	button.pressed.connect(callback)
 	YourLines().add_child(button)
+
+func replace_placeholders(line: String) -> String:
+	return line.replace("[ACCESSORY]", accessory_name).replace("[ACCESSORIES]", accessory_name + "s")

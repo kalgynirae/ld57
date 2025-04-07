@@ -54,7 +54,12 @@ func advance_mode():
 	if mode == 4:
 		var selected_date = $OpponentScreen.selected_date
 		var selected_track = $TrackScreen.selected_track
-		$RaceScreen.init(completed_first_race, selected_date, selected_track)
+		$RaceScreen.init(
+			completed_first_race,
+			selected_date,
+			selected_track,
+			$CharacterScreen.CLOTHES_NAMES[$CharacterScreen.selected_clothes],
+		)
 
 func _on_faded_to_black() -> void:
 	if mode < 4:

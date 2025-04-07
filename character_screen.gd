@@ -3,6 +3,7 @@ extends Node2D
 const BODIES = ["wormbodypink.png", "wormbodyblue.png", "wormbodygreen.png", "wormbodygrey.png", "wormbodypurple.png", "wormbodyyellow.png"]
 const EYES = ["wormeyesbeats.png", "wormeyescat.png", "wormeyeshappy.png", "wormeyesnerd.png", "wormeyessad.png", "wormeyesshock.png"]
 const CLOTHES = ["wormclothesblacktee.png", "wormclothesbowtie.png", "wormclothesbra.png", "wormclothesscarf.png", "wormclothesvest.png"]
+const CLOTHES_NAMES = ["BLACK T-SHIRT", "BLUE BOWTIE", "PURPLE BRA", "GREEN SCARF", "BROWN VEST"]
 
 var selected_body = 0
 var selected_eyes = 0 
