@@ -30,7 +30,7 @@ func _on_countdown_timeout() -> void:
 	countdown_state += 1
 
 var current_item = null
-const items = ["banana", "shell", "star"]
+const items = ["banana", "shell", "star", "blueshell", "mushroom"]
 
 func hide_item_block() -> void:
 	$Item.visible = false
@@ -55,6 +55,10 @@ func _on_click_area_gui_input(event: InputEvent) -> void:
 					$Item/Shell.visible = true
 				"star":
 					$Item/Star.visible = true
+				"blueshell":
+					$Item/Blueshell.visible = true
+				"mushroom":
+					$Item/Mushroom.visible = true
 			$Item/ItemBox.visible = false
 		elif current_item != null:
 			# TODO: use the item
