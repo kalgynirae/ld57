@@ -110,6 +110,8 @@ func reset_conversation() -> void:
 	clear_buttons()
 	if lap > 1:
 		$Hud.show_item_block()
+	elif lap == 1:
+		$MusicReady.play()
 
 func finish_conversation() -> void:
 	completed = true

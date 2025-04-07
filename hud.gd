@@ -13,18 +13,18 @@ func countdown() -> void:
 
 func _on_countdown_timeout() -> void:
 	match countdown_state:
-		4:
+		7:
 			$Three.visible = true
 			$CountdownAudio.play()
-		7: $Three.visible = false
-		8: $Two.visible = true
-		11: $Two.visible = false
-		12: $One.visible = true
-		15: $One.visible = false
-		16:
+		10: $Three.visible = false
+		11: $Two.visible = true
+		14: $Two.visible = false
+		15: $One.visible = true
+		18: $One.visible = false
+		19:
 			$Date.visible = true
 			countdown_finished = true
-		20:
+		23:
 			$Date.visible = false
 			$Countdown.stop()
 	countdown_state += 1
