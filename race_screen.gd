@@ -11,6 +11,7 @@ var current_item: int = 0
 var used_choices: Dictionary[String, bool] = {}
 var lap: int = 0
 var total_laps: int = 2
+var lap_times: Array[int] = []
 var completed = false
 var start_time = null
 var opponent = null
@@ -70,6 +71,12 @@ func _process(_delta: float) -> void:
 
 func update_lap() -> void:
 	get_node("Hud/Box/Lap").text = "Lap %s/%s" % [lap, total_laps]
+	update_lap_time()
+	
+func update_lap_time() -> void:
+	if start_time:
+		var elapsed = Time.get_ticks_msec() - start_time
+		lap_times.append(elapsed)
 
 func TheirLine() -> Node:
 	return get_node("Conversation/Panel/MarginContainer/BoxContainer/HBoxContainer/TheirLine")
@@ -130,6 +137,7 @@ func advance_conversation(marker) -> void:
 				reset_conversation()
 				advance_conversation(null)
 			else:
+				update_lap_time()
 				finish_conversation()
 			return
 		while conversation[current_item].has("marker"):

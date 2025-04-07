@@ -8,6 +8,7 @@ func _ready():
 	$CharacterScreen/Proceed.pressed.connect(advance_mode)
 	$OpponentScreen/Proceed.pressed.connect(advance_mode)
 	$TrackScreen/Proceed.pressed.connect(advance_mode)
+	$ResultsScreen/Proceed.pressed.connect(advance_mode)
 	
 func start():
 	$ClickToStart.visible = false
@@ -32,9 +33,7 @@ func _process(_delta):
 		advance_mode()
 
 func advance_mode():
-	mode = (mode + 1) % 5
-	
-	$RaceScreen.visible = false
+	mode = (mode + 1) % 6
 
 	adjust_music(mode)
 
@@ -45,6 +44,11 @@ func advance_mode():
 	if mode == 0:
 		position = Vector2(0, 0)
 	elif mode < 4:
+		$MusicTitleLoop.stop()
+		$MusicTitleIntro.stop()
+		$RaceScreen.visible = false
+		$ResultsScreen.visible = false
+	
 		var target_y = 0
 		match mode:
 			1:
@@ -54,8 +58,8 @@ func advance_mode():
 			3:
 				target_y = -$TrackScreen.position.y
 		tween.tween_property(self, "position", Vector2(0, target_y), 0.75)
-	elif mode == 4:
-		# Fade to black for entering race scene
+	else:
+		# Fade to black for entering race and results scenes
 		tween.tween_property(self, "modulate", Color(0, 0, 0, 1), 0.6)
 		tween.tween_callback(_on_faded_to_black)
 		tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.6)
@@ -70,6 +74,9 @@ func advance_mode():
 func _on_faded_to_black() -> void:
 	if mode == 4:
 		$RaceScreen.visible = true
+	if mode == 5:
+		$ResultsScreen.init($RaceScreen.lap_times)
+		$ResultsScreen.visible = true
 
 func _on_transition_finished() -> void:
 	if mode == 4:

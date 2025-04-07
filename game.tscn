@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://u76quktxaryv"]
+[gd_scene load_steps=18 format=3 uid="uid://u76quktxaryv"]
 
 [ext_resource type="Script" uid="uid://bxby5voubx8m8" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://buwgp24tuvtcx" path="res://title_screen.tscn" id="2_fc0e3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://du6uvi7btuoy" path="res://track_screen.gd" id="7_j5wjh"]
 [ext_resource type="ButtonGroup" uid="uid://c2152408pae2a" path="res://track_button_group.tres" id="8_vef74"]
 [ext_resource type="AudioStream" uid="uid://dlpp15afy4pg7" path="res://audio/title-intro.ogg" id="9_hve3p"]
+[ext_resource type="PackedScene" uid="uid://bu146e64u5o4d" path="res://results_screen.tscn" id="10_iotsf"]
 [ext_resource type="AudioStream" uid="uid://bmsjtowdnpyfr" path="res://audio/title-loop.ogg" id="10_mfdv2"]
 [ext_resource type="AudioStream" uid="uid://b2na2rsf42c0i" path="res://audio/menus-intro.ogg" id="12_215e1"]
 [ext_resource type="AudioStream" uid="uid://1y47p4t5sytf" path="res://audio/menus-loop.ogg" id="13_7sc4i"]
@@ -40,6 +41,10 @@ script = ExtResource("7_j5wjh")
 button_group = ExtResource("8_vef74")
 
 [node name="RaceScreen" parent="." instance=ExtResource("2_feb5d")]
+visible = false
+position = Vector2(0, 2640)
+
+[node name="ResultsScreen" parent="." instance=ExtResource("10_iotsf")]
 visible = false
 position = Vector2(0, 2640)
 
