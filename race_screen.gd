@@ -40,7 +40,7 @@ func init(completed_first_race: bool, character_name: String, background_name: S
 			new.position = old_position
 			add_child(new)
 			load_conversation("waspie")
-			
+
 	match background_name:
 		"school":
 			$DateBackground.texture = school_background	
@@ -135,7 +135,6 @@ func advance_conversation(marker) -> void:
 				lap += 1
 				update_lap()
 				reset_conversation()
-				advance_conversation(null)
 			else:
 				update_lap_time()
 				finish_conversation()
