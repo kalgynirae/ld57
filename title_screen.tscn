@@ -1,20 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://buwgp24tuvtcx"]
+[gd_scene load_steps=3 format=3 uid="uid://buwgp24tuvtcx"]
 
 [ext_resource type="Texture2D" uid="uid://cjrggunayjhp2" path="res://images/superdeeptitlescreen.png" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://chu3pl862efmg" path="res://images/Title.png" id="2_ak2if"]
 
 [node name="TitleScreen" type="Node2D"]
 
 [node name="superdeeptitlescreen" type="Sprite2D" parent="."]
 texture = ExtResource("1_v6p8y")
 centered = false
-
-[node name="Label" type="Label" parent="."]
-offset_left = 335.0
-offset_top = 117.0
-offset_right = 902.0
-offset_bottom = 271.0
-theme_override_font_sizes/font_size = 96
-text = "Speed Dating"
 
 [node name="Start" type="Button" parent="."]
 anchors_preset = 8
@@ -38,9 +31,22 @@ offset_bottom = 661.0
 text = "     Don't Start     "
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 525.0
-offset_top = 264.0
-offset_right = 663.0
-offset_bottom = 291.0
+offset_left = 568.0
+offset_top = 547.0
+offset_right = 706.0
+offset_bottom = 574.0
 theme_override_font_sizes/font_size = 14
 text = "It's not that deep..."
+
+[node name="Title" type="Sprite2D" parent="."]
+texture = ExtResource("2_ak2if")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1186.0
+offset_top = 7.0
+offset_right = 1275.0
+offset_bottom = 148.0
+text = "kalgynirae
+itisthelaw
+sucratre"
