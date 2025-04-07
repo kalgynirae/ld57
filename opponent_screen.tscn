@@ -1,27 +1,26 @@
-[gd_scene load_steps=14 format=3 uid="uid://bm7xgnkrly7uq"]
+[gd_scene load_steps=13 format=3 uid="uid://bm7xgnkrly7uq"]
 
 [ext_resource type="Script" uid="uid://cahuaycds7iro" path="res://opponent_screen.gd" id="1_c7os8"]
-[ext_resource type="Texture2D" uid="uid://lpi3gpip8g2a" path="res://images/MillieButtonNormal.png" id="1_e2bi0"]
 [ext_resource type="ButtonGroup" uid="uid://co05pklw1wweb" path="res://opponent_button_group.tres" id="1_g64s2"]
-[ext_resource type="Texture2D" uid="uid://dl3lj0752ddiq" path="res://images/MillieButtonPressed1.png" id="2_jjs8b"]
-[ext_resource type="Texture2D" uid="uid://c7r4y1e4d2kgd" path="res://images/MillieButtonPressed2.png" id="3_g64s2"]
-[ext_resource type="Texture2D" uid="uid://bespfiar01fqv" path="res://images/MillieButtonHover1.png" id="3_jjs8b"]
-[ext_resource type="Texture2D" uid="uid://o6y6b5e8cm6g" path="res://images/MillieButtonHover2.png" id="4_g64s2"]
+[ext_resource type="Texture2D" uid="uid://j5qqa0igv77g" path="res://images/Millie button.png" id="3_g63kt"]
+[ext_resource type="Texture2D" uid="uid://dyntfkw78ivhd" path="res://images/Millie Button pressed 1.png" id="4_obp43"]
+[ext_resource type="Texture2D" uid="uid://dlq1u0025rqgq" path="res://images/Millie Button pressed 2.png" id="5_gkomh"]
+[ext_resource type="Texture2D" uid="uid://blk35ojj26n53" path="res://images/Millie Button 1.png" id="6_714pd"]
 [ext_resource type="Texture2D" uid="uid://ks6lkvrja78a" path="res://images/Question Mark.png" id="8_g63kt"]
 [ext_resource type="Texture2D" uid="uid://bbkwpuded8vjj" path="res://images/Wasp.png" id="8_obp43"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_jjs8b"]
 frames = 2
-frame_0/texture = ExtResource("2_jjs8b")
+frame_0/texture = ExtResource("4_obp43")
 frame_0/duration = 0.5
-frame_1/texture = ExtResource("3_g64s2")
+frame_1/texture = ExtResource("5_gkomh")
 frame_1/duration = 0.5
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_c7os8"]
 frames = 2
-frame_0/texture = ExtResource("3_jjs8b")
+frame_0/texture = ExtResource("6_714pd")
 frame_0/duration = 0.5
-frame_1/texture = ExtResource("4_g64s2")
+frame_1/texture = ExtResource("3_g63kt")
 frame_1/duration = 0.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gkomh"]
@@ -76,7 +75,7 @@ offset_bottom = 344.0
 scale = Vector2(8, 8)
 toggle_mode = true
 button_group = ExtResource("1_g64s2")
-texture_normal = ExtResource("1_e2bi0")
+texture_normal = ExtResource("3_g63kt")
 texture_pressed = SubResource("AnimatedTexture_jjs8b")
 texture_hover = SubResource("AnimatedTexture_c7os8")
 
