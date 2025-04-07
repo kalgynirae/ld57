@@ -79,7 +79,7 @@ def you(choices_or_line: dict[str, int] | str):
             {
                 "id": str(next(choice_id_gen)),
                 "line": line,
-                "next": str(next_marker_label),
+                "next": None if next_marker_label is None else str(next_marker_label),
             }
             for line, next_marker_label in choices_or_line.items()
         ]
@@ -253,7 +253,7 @@ with conversation("millie"):
 
 
 with conversation("waspie"):
-    them("", emote="neutral")
+    them("...", emote="neutral")
     you(
         {
             "So... how's the weather today?": "weather",
@@ -294,7 +294,6 @@ with conversation("waspie"):
         }
     )
     them("...", emote="surprise")
-    you("...")
     them("...", emote="neutral")
     you(
         {
@@ -351,10 +350,12 @@ with conversation("waspie"):
             "OK": None,
         }
     )
+    them("...")
     end()
 
     marker("no")
     them("GET OUT OF MY SIGHT, WORM!", emote="anger")
+    them("NOW!!")
     end()
 
 dump_scripts()
