@@ -9,12 +9,17 @@ func _ready():
 	$OpponentScreen/Proceed.pressed.connect(advance_mode)
 	$TrackScreen/Proceed.pressed.connect(advance_mode)
 	
+func start():
+	$ClickToStart.visible = false
+
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.tween_property($TitleScreen/Title, "position", Vector2(0, 0), 0.6)
 	tween.tween_property($TitleScreen/Subtitle, "position", Vector2(568, 547), 5)
 
+	$MusicTitleIntro.play()
+	$MusicMenusIntro.play()
 	adjust_music(mode)
 
 func _process(_delta):
@@ -74,7 +79,9 @@ func adjust_music(new_mode: int) -> void:
 	match new_mode:
 		0:
 			var tween = get_tree().create_tween().set_parallel(true)
-			tween.tween_property($MusicTitleIntro, "volume_linear", 0.9, 1.0)
+			# If the intro is still playing, we can assume this is the first viewing
+			# of the title screen and set it immediately to full volume.
+			$MusicTitleIntro.volume_linear = 1.0
 			tween.tween_property($MusicTitleLoop, "volume_linear", 0.9, 1.0)
 			tween.tween_property($MusicMenusIntro, "volume_linear", 0.0, 1.0)
 			tween.tween_property($MusicMenusLoop, "volume_linear", 0.0, 1.0)
@@ -92,3 +99,7 @@ func adjust_music(new_mode: int) -> void:
 func _on_music_title_intro_finished() -> void:
 	$MusicTitleLoop.play()
 	$MusicMenusLoop.play()
+
+func _on_click_to_start_gui_input(event) -> void:
+	if event is InputEventMouseButton:
+		start()
