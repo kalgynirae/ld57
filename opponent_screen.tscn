@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dlq1u0025rqgq" path="res://images/Millie Button pressed 2.png" id="5_gkomh"]
 [ext_resource type="Texture2D" uid="uid://blk35ojj26n53" path="res://images/Millie Button 1.png" id="6_714pd"]
 [ext_resource type="Texture2D" uid="uid://68bnrjax04kn" path="res://images/Waspie button.png" id="7_lnpep"]
-[ext_resource type="Texture2D" uid="uid://ks6lkvrja78a" path="res://images/Question Mark.png" id="8_g63kt"]
 [ext_resource type="Texture2D" uid="uid://ddosvuq74f6ff" path="res://images/Waspie Button pressed 1.png" id="8_u2t0i"]
 [ext_resource type="Texture2D" uid="uid://bal643grsosin" path="res://images/Waspie Button pressed 2.png" id="9_c24tg"]
 [ext_resource type="Texture2D" uid="uid://cp45lp3nmm51a" path="res://images/Waspie Button 1.png" id="10_i4ggt"]
 [ext_resource type="Texture2D" uid="uid://e6wh4rwo2s1e" path="res://images/Waspie Button 2.png" id="11_0x8ek"]
+[ext_resource type="Texture2D" uid="uid://cy04sl6f47bdl" path="res://images/lock.png" id="12_lnpep"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_jjs8b"]
 frames = 2
@@ -111,7 +111,7 @@ offset_bottom = 512.0
 disabled = true
 toggle_mode = true
 button_group = ExtResource("1_g64s2")
-texture_normal = ExtResource("8_g63kt")
+texture_normal = ExtResource("12_lnpep")
 stretch_mode = 0
 
 [node name="QuestionButton3" type="TextureButton" parent="."]
@@ -123,7 +123,7 @@ offset_bottom = 512.0
 disabled = true
 toggle_mode = true
 button_group = ExtResource("1_g64s2")
-texture_normal = ExtResource("8_g63kt")
+texture_normal = ExtResource("12_lnpep")
 stretch_mode = 0
 
 [node name="Label2" type="Label" parent="."]
