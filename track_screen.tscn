@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu1iaadae4xhq"]
+[gd_scene load_steps=7 format=3 uid="uid://cu1iaadae4xhq"]
 
 [ext_resource type="ButtonGroup" uid="uid://c2152408pae2a" path="res://track_button_group.tres" id="1_0oabd"]
-[ext_resource type="Texture2D" uid="uid://c4trp0ti40pfb" path="res://images/SchoolNormal.png" id="2_r8e5t"]
-[ext_resource type="Texture2D" uid="uid://dlv1go5ndj0ea" path="res://images/SchoolPressed.png" id="3_4ah37"]
+[ext_resource type="Texture2D" uid="uid://d4j3xij225bks" path="res://images/School Button.png" id="2_bhjuq"]
+[ext_resource type="Texture2D" uid="uid://dka6klf4u010k" path="res://images/School Button pushed.png" id="3_ckva7"]
+[ext_resource type="Texture2D" uid="uid://bnulxflia13m6" path="res://images/Park Button.png" id="4_g44u1"]
 [ext_resource type="Texture2D" uid="uid://ks6lkvrja78a" path="res://images/Question Mark.png" id="4_r8e5t"]
+[ext_resource type="Texture2D" uid="uid://cjrw7q4dypbsw" path="res://images/Park Button pushed.png" id="5_p8fml"]
 
 [node name="TrackScreen" type="Node2D"]
 
@@ -47,10 +49,10 @@ offset_bottom = 344.0
 scale = Vector2(8, 8)
 toggle_mode = true
 button_group = ExtResource("1_0oabd")
-texture_normal = ExtResource("2_r8e5t")
-texture_pressed = ExtResource("3_4ah37")
+texture_normal = ExtResource("2_bhjuq")
+texture_pressed = ExtResource("3_ckva7")
 
-[node name="QuestionButton" type="TextureButton" parent="."]
+[node name="ParkButton" type="TextureButton" parent="."]
 texture_filter = 1
 offset_left = 418.0
 offset_top = 320.0
@@ -58,7 +60,8 @@ offset_right = 616.0
 offset_bottom = 512.0
 toggle_mode = true
 button_group = ExtResource("1_0oabd")
-texture_normal = ExtResource("4_r8e5t")
+texture_normal = ExtResource("4_g44u1")
+texture_pressed = ExtResource("5_p8fml")
 stretch_mode = 0
 
 [node name="QuestionButton2" type="TextureButton" parent="."]
@@ -67,6 +70,7 @@ offset_left = 648.0
 offset_top = 320.0
 offset_right = 846.0
 offset_bottom = 512.0
+disabled = true
 toggle_mode = true
 button_group = ExtResource("1_0oabd")
 texture_normal = ExtResource("4_r8e5t")
@@ -78,6 +82,7 @@ offset_left = 874.0
 offset_top = 320.0
 offset_right = 1072.0
 offset_bottom = 512.0
+disabled = true
 toggle_mode = true
 button_group = ExtResource("1_0oabd")
 texture_normal = ExtResource("4_r8e5t")

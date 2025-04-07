@@ -3,6 +3,8 @@ extends Node2D
 const finishline = preload("res://images/finishline.png")
 const millie = preload("res://millie.tscn")
 const waspie = preload("res://waspie.tscn")
+const school_background = preload("res://images/datebackgroundschoolhouset.png")
+const park_background = preload("res://images/Parkdatebackground.png")
 
 var conversation = null
 var current_item: int = 0
@@ -16,7 +18,7 @@ var opponent = null
 func _ready() -> void:
 	opponent = $Opponent
 
-func init(completed_first_race: bool, character_name: String) -> void:
+func init(completed_first_race: bool, character_name: String, background_name: String) -> void:
 	if completed_first_race:
 		$Hud/Timer.visible = true
 	else:
@@ -37,6 +39,12 @@ func init(completed_first_race: bool, character_name: String) -> void:
 			new.position = old_position
 			add_child(new)
 			load_conversation("waspie")
+			
+	match background_name:
+		"school":
+			$DateBackground.texture = school_background	
+		"park":
+			$DateBackground.texture = park_background
 
 	lap = 1
 	update_lap()
