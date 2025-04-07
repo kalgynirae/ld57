@@ -22,8 +22,11 @@ func advance_mode():
 	mode = (mode + 1) % 5
 
 	if mode == 0:
+		$MusicTitleIntro.play()
 		position = Vector2(0, 0)
 	else:
+		$MusicTitleLoop.stop()
+		$MusicTitleIntro.stop()
 		var tween = get_tree().create_tween()
 		tween.set_ease(Tween.EASE_OUT)
 		tween.set_trans(Tween.TRANS_QUAD)
@@ -36,3 +39,7 @@ func advance_mode():
 
 	if mode == 4:
 		$RaceScreen.init(completed_first_race)
+
+
+func _on_music_title_intro_finished() -> void:
+	$MusicTitleLoop.play()
