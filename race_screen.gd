@@ -79,12 +79,10 @@ func _process(_delta: float) -> void:
 
 func update_lap() -> void:
 	get_node("Hud/Box/Lap").text = "Lap %s/%s" % [lap, total_laps]
-	update_lap_time()
 	
-func update_lap_time() -> void:
-	if start_time:
-		var elapsed = Time.get_ticks_msec() - start_time
-		lap_times.append(elapsed)
+func record_lap_time() -> void:
+	var elapsed = Time.get_ticks_msec() - start_time
+	lap_times.append(elapsed)
 
 func TheirLine() -> Node:
 	return get_node("Conversation/Panel/MarginContainer/BoxContainer/HBoxContainer/TheirLine")
@@ -139,16 +137,17 @@ func advance_conversation(marker) -> void:
 	else:
 		current_item += 1
 		if current_item >= len(conversation) or marker == "FINISH":
+			record_lap_time()
 			if lap < total_laps:
 				lap += 1
 				$Hud.show_lap(lap, total_laps)
 				update_lap()
 				reset_conversation()
+				start_time = Time.get_ticks_msec()
 				advance_conversation(null)
 				if lap == total_laps:
 					play_final_lap()
 			else:
-				update_lap_time()
 				finish_conversation()
 			return
 		while conversation[current_item].has("marker"):

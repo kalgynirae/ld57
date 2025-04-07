@@ -66,9 +66,9 @@ func _on_faded_to_black() -> void:
 	$RaceScreen.visible = false
 	$ResultsScreen.visible = false
 		
-	# go from results screen back to character screen
+	# go from results screen back to opponent screen
 	if mode > 5:
-		mode = 1
+		mode = 2
 
 	if mode < 4:
 		position = get_target_position()
