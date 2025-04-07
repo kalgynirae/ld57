@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://4wpkxn6cxlou" path="res://images/wormeyesbeats.png" id="3_045sq"]
 [ext_resource type="Texture2D" uid="uid://bvqhppidduak5" path="res://images/characterselectframe.png" id="4_q5c7c"]
 [ext_resource type="Texture2D" uid="uid://dnag5tcu2fj47" path="res://images/Uparrow.png" id="4_qayua"]
-[ext_resource type="Texture2D" uid="uid://csonf6u8dmcsu" path="res://images/No Stats worm.png" id="5_o56ep"]
+[ext_resource type="Texture2D" uid="uid://b4rmfm3fhms8c" path="res://images/No Stats worm2.png" id="5_o56ep"]
 [ext_resource type="Texture2D" uid="uid://cmg6uwfwjscdo" path="res://images/Uparrowpressed.png" id="5_q5c7c"]
-[ext_resource type="Texture2D" uid="uid://bc5h60u3u88rg" path="res://images/Stats worm.png" id="6_f2i2a"]
+[ext_resource type="Texture2D" uid="uid://b8mhjmxawudqp" path="res://images/Stats worm2.png" id="6_f2i2a"]
 [ext_resource type="Texture2D" uid="uid://canehuu2cv03m" path="res://images/downarrow.png" id="6_iy8fj"]
 [ext_resource type="Texture2D" uid="uid://bktsb148nvv5t" path="res://images/downarrowpressed.png" id="7_o56ep"]
 
