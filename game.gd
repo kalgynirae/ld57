@@ -115,7 +115,7 @@ func adjust_music(new_mode: int) -> void:
 			tween.tween_property($MusicTitleLoop, "volume_linear", 0.9, 1.0)
 			tween.tween_property($MusicMenusIntro, "volume_linear", 0.0, 1.0)
 			tween.tween_property($MusicMenusLoop, "volume_linear", 0.0, 1.0)
-		1, 5:
+		1, 2, 3, 5:
 			var tween = get_tree().create_tween().set_parallel(true)
 			tween.tween_property($MusicTitleIntro, "volume_linear", 0.0, 1.0)
 			tween.tween_property($MusicTitleLoop, "volume_linear", 0.0, 1.0)
