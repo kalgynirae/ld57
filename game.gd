@@ -9,7 +9,7 @@ func _ready():
 	$OpponentScreen/Proceed.pressed.connect(advance_mode)
 	$TrackScreen/Proceed.pressed.connect(advance_mode)
 	$ResultsScreen/Proceed.pressed.connect(advance_mode)
-	
+
 func start():
 	$ClickToStart.visible = false
 
@@ -30,6 +30,16 @@ func _process(_delta):
 	if $RaceScreen.completed:
 		$RaceScreen.completed = false
 		completed_first_race = true
+		$OpponentScreen/BestLapTimes.visible = true
+
+		var fastest_lap = $RaceScreen.lap_times.min()
+		var minutes = fastest_lap / 60000
+		var seconds = (fastest_lap / 1000) % 60
+		var milliseconds = (fastest_lap % 1000) / 10
+		var laptime = "%02d:%02d.%02d" % [minutes, seconds, milliseconds]
+		var label = $OpponentScreen.get_node("BestLapTimes/BestLap%s" % $OpponentScreen.selected_date.capitalize())
+		label.text = laptime
+
 		advance_mode()
 
 func advance_mode():

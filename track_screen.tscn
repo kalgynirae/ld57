@@ -89,29 +89,33 @@ texture_normal = ExtResource("6_bhjuq")
 stretch_mode = 0
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 210.0
-offset_top = 537.0
-offset_right = 396.0
-offset_bottom = 570.0
+offset_left = 184.0
+offset_top = 280.0
+offset_right = 444.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 24
 text = "School School Circuit"
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 477.0
-offset_top = 537.0
-offset_right = 597.0
-offset_bottom = 570.0
+offset_left = 467.0
+offset_top = 280.0
+offset_right = 634.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 24
 text = "Park Parkway"
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 734.0
-offset_top = 537.0
-offset_right = 783.0
-offset_bottom = 570.0
+offset_top = 280.0
+offset_right = 802.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 24
 text = "????"
 
 [node name="Label5" type="Label" parent="."]
-offset_left = 960.0
-offset_top = 537.0
-offset_right = 1009.0
-offset_bottom = 570.0
+offset_left = 959.0
+offset_top = 280.0
+offset_right = 1027.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 24
 text = "????"

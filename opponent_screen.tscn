@@ -127,29 +127,59 @@ texture_normal = ExtResource("12_lnpep")
 stretch_mode = 0
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 275.0
-offset_top = 537.0
-offset_right = 321.0
-offset_bottom = 570.0
+offset_left = 267.0
+offset_top = 279.0
+offset_right = 331.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 28
 text = "Millie"
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 483.0
-offset_top = 537.0
-offset_right = 586.0
-offset_bottom = 570.0
+offset_left = 460.0
+offset_top = 279.0
+offset_right = 603.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 28
 text = "J.B. Stinger"
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 734.0
-offset_top = 537.0
-offset_right = 783.0
-offset_bottom = 570.0
+offset_left = 727.0
+offset_top = 279.0
+offset_right = 795.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 28
 text = "????"
 
 [node name="Label5" type="Label" parent="."]
-offset_left = 960.0
-offset_top = 537.0
-offset_right = 1009.0
-offset_bottom = 570.0
+offset_left = 952.0
+offset_top = 279.0
+offset_right = 1020.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 28
 text = "????"
+
+[node name="BestLapTimes" type="Node2D" parent="."]
+visible = false
+
+[node name="Label6" type="Label" parent="BestLapTimes"]
+offset_left = 40.0
+offset_top = 527.0
+offset_right = 176.0
+offset_bottom = 560.0
+text = "Best Lap Time:"
+
+[node name="BestLapMillie" type="Label" parent="BestLapTimes"]
+offset_left = 207.0
+offset_top = 527.0
+offset_right = 392.0
+offset_bottom = 560.0
+text = "0:00.00"
+horizontal_alignment = 1
+
+[node name="BestLapWaspie" type="Label" parent="BestLapTimes"]
+offset_left = 438.0
+offset_top = 527.0
+offset_right = 630.0
+offset_bottom = 560.0
+text = "0:00.00"
+horizontal_alignment = 1
