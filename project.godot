@@ -14,6 +14,10 @@ config/name="LD57 Racing Game"
 run/main_scene="uid://u76quktxaryv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[audio]
+
+general/default_playback_type.web=0
+
 [debug]
 
 gdscript/warnings/integer_division=0

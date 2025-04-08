@@ -33,9 +33,9 @@ text = "     Don't Start     "
 
 [node name="Subtitle" type="Label" parent="."]
 offset_left = -137.0
-offset_top = 547.0
+offset_top = 619.0
 offset_right = 1.0
-offset_bottom = 574.0
+offset_bottom = 646.0
 theme_override_font_sizes/font_size = 14
 text = "It's not that deep..."
 
